@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="mr">
-
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <title>श्री पद्मावती गणेश मंडळ | गणपती बाप्पा मोरया</title>
 
-    <title>गणपती बाप्पा मोरया | Ganpati Festival</title>
+    <meta name="description"
+          content="श्री पद्मावती गणेश मंडळ - भक्ती, संस्कृती, एकता आणि सामाजिक बांधिलकीचा उत्सव. गणपती बाप्पा मोरया!">
 
     <style>
+
+        /* =====================================================
+           GLOBAL
+        ===================================================== */
 
         * {
             margin: 0;
@@ -23,306 +26,604 @@
         }
 
         body {
-            font-family: "Segoe UI", Arial, sans-serif;
-            background: #160b05;
+            font-family:
+                "Noto Sans Devanagari",
+                "Segoe UI",
+                Arial,
+                sans-serif;
+
+            background: #100603;
             color: #fff;
+
             line-height: 1.7;
+
+            overflow-x: hidden;
         }
 
-        /* ================= NAVBAR ================= */
+        :root {
+            --gold: #ffbd32;
+            --gold-light: #ffe08a;
+            --orange: #ff7a00;
+            --dark: #100603;
+            --dark2: #1d0a04;
+            --card: rgba(255, 255, 255, 0.06);
+            --border: rgba(255, 189, 50, 0.25);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        section {
+            padding: 90px 8%;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+
+        /* =====================================================
+           SCROLL BAR
+        ===================================================== */
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #100603;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold);
+            border-radius: 10px;
+        }
+
+
+        /* =====================================================
+           NAVBAR
+        ===================================================== */
 
         nav {
-
-            position: sticky;
+            position: fixed;
             top: 0;
-            z-index: 999;
+            left: 0;
+            width: 100%;
+
+            z-index: 9999;
 
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
 
             padding: 16px 7%;
 
-            background: rgba(25, 10, 3, 0.95);
+            background:
+                rgba(15, 5, 2, 0.82);
 
-            border-bottom: 1px solid rgba(255,255,255,0.15);
+            backdrop-filter: blur(14px);
 
-            backdrop-filter: blur(10px);
-        }
-
-        .logo {
-
-            font-size: 24px;
-            font-weight: bold;
-
-            color: #ffb300;
-        }
-
-        .logo span {
-            color: #fff;
-        }
-
-        nav ul {
-
-            list-style: none;
-
-            display: flex;
-            gap: 25px;
-        }
-
-        nav a {
-
-            color: #fff;
-            text-decoration: none;
-
-            font-size: 14px;
+            border-bottom:
+                1px solid rgba(255, 189, 50, 0.15);
 
             transition: 0.3s;
         }
 
-        nav a:hover {
-            color: #ffb300;
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            font-size: 21px;
+            font-weight: 800;
+
+            color: var(--gold);
         }
 
-        /* ================= HERO ================= */
+        .logo-icon {
+            font-size: 28px;
+        }
+
+        .logo span {
+            color: white;
+        }
+
+        nav ul {
+            display: flex;
+            align-items: center;
+            gap: 27px;
+            list-style: none;
+        }
+
+        nav ul li a {
+            color: #eadccf;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--gold);
+        }
+
+        .nav-button {
+            padding: 9px 18px;
+            border-radius: 25px;
+
+            background: var(--gold);
+            color: #301000 !important;
+
+            font-weight: 700;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
 
         .hero {
 
-            min-height: 92vh;
+            min-height: 100vh;
 
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
 
             text-align: center;
 
-            padding: 60px 20px;
+            padding: 130px 20px 80px;
+
+            position: relative;
 
             background:
                 linear-gradient(
-                    rgba(20, 5, 0, 0.55),
-                    rgba(20, 5, 0, 0.8)
+                    rgba(15, 4, 0, 0.50),
+                    rgba(15, 4, 0, 0.85)
                 ),
-                url("https://bloomsonly.in/cdn/shop/files/WhatsApp_Image_2025-07-11_at_11.53.25.jpg?v=1752995781");
+                url("https://images.unsplash.com/photo-1567591414240-e6b7f0e8a6a4?auto=format&fit=crop&w=1800&q=85");
 
             background-size: cover;
             background-position: center;
+
+            overflow: hidden;
+        }
+
+        .hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(255, 167, 38, 0.25),
+                    transparent 50%
+                );
         }
 
         .hero-content {
+            position: relative;
+            z-index: 2;
+
             max-width: 900px;
         }
 
-        .ganesh-icon {
+        .small-title {
 
-            font-size: 75px;
+            color: var(--gold-light);
 
-            animation: floating 2.5s ease-in-out infinite;
+            font-size: 18px;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 12px;
+
+            animation: fadeDown 1s ease;
         }
 
-        @keyframes floating {
+        .ganesh-symbol {
 
-            0%,100% {
+            font-size: 72px;
+
+            margin-bottom: 5px;
+
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%, 100% {
                 transform: translateY(0);
             }
 
             50% {
-                transform: translateY(-15px);
+                transform: translateY(-12px);
+            }
+        }
+
+        @keyframes fadeDown {
+
+            from {
+                opacity: 0;
+                transform: translateY(-25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
         .hero h1 {
 
-            font-size: 65px;
+            font-size: clamp(42px, 7vw, 76px);
 
-            margin-top: 15px;
+            line-height: 1.15;
+
+            margin-bottom: 15px;
 
             text-shadow:
-                0 5px 20px rgba(0,0,0,0.8);
+                0 5px 25px rgba(0,0,0,0.8);
         }
 
         .hero h1 span {
-            color: #ffb300;
+            color: var(--gold);
         }
 
-        .hero p {
+        .hero-subtitle {
 
-            font-size: 21px;
+            color: #ffe8c5;
 
-            color: #ffe9c2;
+            font-size: 20px;
 
-            margin-top: 15px;
+            max-width: 720px;
+
+            margin: auto;
+
+            line-height: 1.8;
         }
 
         .hero-buttons {
-            margin-top: 30px;
+
+            margin-top: 32px;
         }
 
         .btn {
 
-            display: inline-block;
+            display: inline-flex;
 
-            padding: 13px 28px;
+            align-items: center;
+            justify-content: center;
+
+            gap: 8px;
+
+            padding: 13px 26px;
 
             margin: 5px;
 
             border-radius: 30px;
 
-            text-decoration: none;
-
-            font-weight: bold;
+            font-weight: 700;
 
             transition: 0.3s;
+
+            cursor: pointer;
         }
 
-        .primary {
+        .btn-primary {
 
-            background: #ffb300;
-            color: #3b1700;
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffd35c,
+                    #ff9d00
+                );
+
+            color: #321100;
+
+            box-shadow:
+                0 8px 25px
+                rgba(255, 157, 0, 0.25);
         }
 
-        .primary:hover {
+        .btn-primary:hover {
 
-            background: #ff8f00;
+            transform: translateY(-4px);
 
-            transform: translateY(-3px);
+            box-shadow:
+                0 12px 30px
+                rgba(255, 157, 0, 0.4);
         }
 
-        .secondary {
+        .btn-outline {
 
-            border: 1px solid #ffb300;
+            border: 1px solid var(--gold);
 
-            color: #ffb300;
+            color: var(--gold);
         }
 
-        .secondary:hover {
+        .btn-outline:hover {
 
-            background: #ffb300;
+            background: var(--gold);
 
-            color: #3b1700;
+            color: #301000;
+
+            transform: translateY(-4px);
         }
 
-        /* ================= COMMON ================= */
 
-        section {
-            padding: 85px 8%;
-        }
+        /* =====================================================
+           MANDAL INTRO
+        ===================================================== */
 
-        .section-title {
-
-            text-align: center;
-
-            margin-bottom: 45px;
-        }
-
-        .section-title h2 {
-
-            font-size: 40px;
-
-            color: #ffb300;
-        }
-
-        .section-title p {
-
-            color: #d6bfa5;
-
-            margin-top: 8px;
-        }
-
-        /* ================= FESTIVAL ================= */
-
-        .festival {
+        .intro {
 
             background:
                 radial-gradient(
-                    circle at center,
-                    #572006,
-                    #160b05
+                    circle at 50% 0%,
+                    #592108,
+                    #160704 60%
                 );
         }
 
-        .festival-grid {
+        .section-heading {
+
+            text-align: center;
+
+            margin-bottom: 55px;
+        }
+
+        .section-heading .overline {
+
+            color: var(--gold);
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
+        .section-heading h2 {
+
+            margin-top: 7px;
+
+            font-size: clamp(32px, 5vw, 45px);
+
+            color: #fff;
+        }
+
+        .section-heading h2 span {
+            color: var(--gold);
+        }
+
+        .section-heading p {
+
+            color: #bfa996;
+
+            max-width: 650px;
+
+            margin: 10px auto 0;
+        }
+
+        .intro-grid {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1.1fr;
+
+            gap: 50px;
+
+            align-items: center;
+        }
+
+        .intro-image {
+
+            position: relative;
+
+            border-radius: 22px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 25px 60px
+                rgba(0,0,0,0.5);
+        }
+
+        .intro-image img {
+
+            width: 100%;
+
+            height: 500px;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition: 0.6s;
+        }
+
+        .intro-image:hover img {
+            transform: scale(1.04);
+        }
+
+        .image-badge {
+
+            position: absolute;
+
+            left: 20px;
+            bottom: 20px;
+
+            padding: 10px 18px;
+
+            background:
+                rgba(20, 7, 2, 0.85);
+
+            backdrop-filter: blur(8px);
+
+            border:
+                1px solid
+                rgba(255,189,50,0.3);
+
+            border-radius: 30px;
+
+            color: var(--gold-light);
+
+            font-weight: 700;
+        }
+
+        .intro-text h3 {
+
+            color: var(--gold);
+
+            font-size: 30px;
+
+            margin-bottom: 15px;
+        }
+
+        .intro-text p {
+
+            color: #d7c2af;
+
+            margin-bottom: 17px;
+
+            font-size: 16px;
+        }
+
+        .highlight-box {
+
+            margin-top: 25px;
+
+            padding: 22px;
+
+            border-radius: 15px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,189,50,0.12),
+                    rgba(255,255,255,0.03)
+                );
+
+            border-left:
+                4px solid var(--gold);
+        }
+
+        .highlight-box strong {
+            color: var(--gold-light);
+        }
+
+
+        /* =====================================================
+           FESTIVAL FEATURES
+        ===================================================== */
+
+        .features {
+
+            background: #100603;
+        }
+
+        .feature-grid {
 
             display: grid;
 
             grid-template-columns:
                 repeat(3, 1fr);
 
-            gap: 25px;
+            gap: 22px;
         }
 
-        .festival-card {
+        .feature-card {
 
-            background: rgba(255,255,255,0.06);
-
-            border: 1px solid
-                rgba(255,179,0,0.25);
-
-            padding: 30px;
-
-            border-radius: 18px;
+            padding: 32px 25px;
 
             text-align: center;
 
-            transition: 0.3s;
+            background: var(--card);
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 18px;
+
+            transition: 0.35s;
+
+            position: relative;
+
+            overflow: hidden;
         }
 
-        .festival-card:hover {
+        .feature-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 100px;
+            height: 100px;
+
+            border-radius: 50%;
+
+            background: rgba(255,189,50,0.08);
+
+            top: -40px;
+            right: -40px;
+        }
+
+        .feature-card:hover {
 
             transform: translateY(-8px);
 
-            border-color: #ffb300;
+            border-color: var(--gold);
+
+            background:
+                rgba(255,189,50,0.08);
         }
 
-        .festival-card .icon {
+        .feature-icon {
 
             font-size: 45px;
 
             margin-bottom: 12px;
         }
 
-        .festival-card h3 {
+        .feature-card h3 {
 
-            color: #ffca58;
+            color: var(--gold-light);
+
+            font-size: 21px;
 
             margin-bottom: 8px;
         }
 
-        .festival-card p {
-            color: #d6bfa5;
+        .feature-card p {
+
+            color: #bda996;
+
+            font-size: 14px;
         }
 
-        /* ================= MAIN PHOTO ================= */
 
-        .main-photo {
+        /* =====================================================
+           GALLERY
+        ===================================================== */
 
-            max-width: 950px;
+        .gallery-section {
 
-            margin: auto;
-
-            border-radius: 20px;
-
-            overflow: hidden;
-
-            box-shadow:
-                0 20px 60px rgba(0,0,0,0.6);
+            background:
+                linear-gradient(
+                    #170804,
+                    #0c0402
+                );
         }
-
-        .main-photo img {
-
-            width: 100%;
-
-            display: block;
-
-            transition: 0.5s;
-        }
-
-        .main-photo:hover img {
-
-            transform: scale(1.03);
-        }
-
-        /* ================= GALLERY ================= */
 
         .gallery {
 
@@ -336,13 +637,21 @@
 
         .gallery-item {
 
-            height: 280px;
+            height: 300px;
+
+            border-radius: 18px;
 
             overflow: hidden;
 
-            border-radius: 15px;
+            position: relative;
 
-            border: 1px solid #44200c;
+            border:
+                1px solid
+                rgba(255,189,50,0.18);
+        }
+
+        .gallery-item.large {
+            grid-column: span 2;
         }
 
         .gallery-item img {
@@ -352,255 +661,557 @@
 
             object-fit: cover;
 
-            transition: 0.5s;
+            display: block;
+
+            transition:
+                transform 0.6s;
         }
 
         .gallery-item:hover img {
 
-            transform: scale(1.08);
+            transform:
+                scale(1.08);
         }
 
-        /* ================= AARTI ================= */
+        .gallery-overlay {
+
+            position: absolute;
+
+            inset: 0;
+
+            display: flex;
+
+            align-items: flex-end;
+
+            padding: 20px;
+
+            background:
+                linear-gradient(
+                    transparent,
+                    rgba(0,0,0,0.8)
+                );
+
+            opacity: 0;
+
+            transition: 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay span {
+
+            color: white;
+
+            font-weight: 700;
+        }
+
+
+        /* =====================================================
+           AARTI
+        ===================================================== */
 
         .aarti-section {
 
             background:
                 radial-gradient(
-                    circle,
-                    #4a1c04,
-                    #160b05
+                    circle at center,
+                    #612506,
+                    #150603 70%
                 );
         }
 
-        .aarti {
+        .aarti-card {
 
-            max-width: 800px;
+            max-width: 850px;
 
             margin: auto;
+
+            padding: 45px;
+
+            text-align: center;
+
+            border-radius: 25px;
 
             background:
                 linear-gradient(
                     145deg,
-                    #241004,
-                    #3b1604
+                    rgba(255,189,50,0.11),
+                    rgba(255,255,255,0.035)
                 );
 
-            border: 1px solid
-                rgba(255,179,0,0.35);
-
-            border-radius: 20px;
-
-            padding: 40px;
-
-            text-align: center;
+            border:
+                1px solid
+                rgba(255,189,50,0.3);
 
             box-shadow:
-                0 20px 50px
+                0 30px 70px
                 rgba(0,0,0,0.4);
         }
 
-        .aarti-icon {
+        .diya {
 
-            font-size: 50px;
+            font-size: 55px;
 
-            margin-bottom: 15px;
+            animation:
+                diyaGlow 1.5s
+                ease-in-out
+                infinite alternate;
         }
 
-        .aarti h3 {
+        @keyframes diyaGlow {
 
-            color: #ffb300;
+            from {
+                filter:
+                    drop-shadow(
+                        0 0 5px #ff9800
+                    );
+            }
 
-            font-size: 30px;
+            to {
+                filter:
+                    drop-shadow(
+                        0 0 25px #ffc107
+                    );
+            }
+        }
 
-            margin-bottom: 25px;
+        .aarti-card h3 {
+
+            color: var(--gold);
+
+            font-size: 32px;
+
+            margin: 10px 0 25px;
         }
 
         .aarti-text {
 
-            font-size: 18px;
+            color: #ffe9c9;
 
-            color: #ffe5bd;
+            font-size: 17px;
 
-            line-height: 2.1;
+            line-height: 2.15;
         }
 
-        .aarti-text strong {
+        .aarti-text .main-line {
 
-            color: #ffb300;
+            color: var(--gold-light);
+
+            font-weight: 700;
         }
 
-        .listen-btn {
+        .aarti-controls {
 
-            margin-top: 25px;
+            margin-top: 30px;
+        }
 
-            padding: 12px 25px;
+        .aarti-button {
 
             border: none;
 
-            border-radius: 25px;
+            padding: 13px 25px;
 
-            background: #ffb300;
+            border-radius: 30px;
 
-            color: #3b1700;
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffd45c,
+                    #ff9800
+                );
 
-            font-weight: bold;
+            color: #321100;
+
+            font-size: 15px;
+
+            font-weight: 700;
 
             cursor: pointer;
 
-            font-size: 15px;
+            transition: 0.3s;
         }
 
-        .listen-btn:hover {
-            background: #ff8f00;
+        .aarti-button:hover {
+
+            transform: scale(1.05);
         }
 
-        /* ================= QUOTE ================= */
+
+        /* =====================================================
+           PROGRAMS
+        ===================================================== */
+
+        .programs {
+
+            background: #100603;
+        }
+
+        .timeline {
+
+            max-width: 850px;
+
+            margin: auto;
+
+            position: relative;
+        }
+
+        .timeline::before {
+
+            content: "";
+
+            position: absolute;
+
+            left: 25px;
+
+            top: 0;
+            bottom: 0;
+
+            width: 2px;
+
+            background:
+                linear-gradient(
+                    #ffbd32,
+                    rgba(255,189,50,0.05)
+                );
+        }
+
+        .event {
+
+            position: relative;
+
+            padding-left: 75px;
+
+            margin-bottom: 30px;
+        }
+
+        .event-icon {
+
+            position: absolute;
+
+            left: 0;
+
+            top: 0;
+
+            width: 52px;
+            height: 52px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background: #2a1005;
+
+            border:
+                2px solid var(--gold);
+
+            font-size: 23px;
+
+            z-index: 2;
+        }
+
+        .event-content {
+
+            padding: 22px;
+
+            border-radius: 15px;
+
+            background:
+                rgba(255,255,255,0.045);
+
+            border:
+                1px solid
+                rgba(255,189,50,0.15);
+        }
+
+        .event-content h3 {
+
+            color: var(--gold);
+
+            margin-bottom: 4px;
+        }
+
+        .event-content p {
+
+            color: #bda996;
+
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           QUOTE
+        ===================================================== */
 
         .quote {
 
             text-align: center;
 
-            padding: 90px 20px;
+            padding: 100px 20px;
 
             background:
                 linear-gradient(
-                    rgba(100,35,0,0.5),
-                    rgba(20,5,0,0.9)
+                    rgba(55, 17, 2, 0.75),
+                    rgba(10, 3, 1, 0.9)
                 ),
-                url("https://feeds.abplive.com/onecms/images/uploaded-images/2025/08/27/fa34e8a30039f12a426ad63baf1c519fe0fd5.jpg?impolicy=abp_cdn&imwidth=720");
+                url("https://images.unsplash.com/photo-1567591414240-e6b7f0e8a6a4?auto=format&fit=crop&w=1800&q=85");
 
             background-size: cover;
 
             background-position: center;
+            background-attachment: fixed;
+        }
+
+        .quote-symbol {
+            font-size: 55px;
         }
 
         .quote h2 {
 
-            font-size: 45px;
+            font-size:
+                clamp(30px, 5vw, 52px);
 
-            color: #ffca58;
+            color: var(--gold-light);
+
+            margin: 10px 0;
         }
 
         .quote p {
 
-            margin-top: 15px;
+            color: #ffe8c5;
 
-            color: #fff0d5;
-
-            font-size: 19px;
+            font-size: 18px;
         }
 
-        /* ================= VISARJAN ================= */
+
+        /* =====================================================
+           VISARJAN
+        ===================================================== */
 
         .visarjan {
 
             text-align: center;
 
-            background: #0e0704;
+            background:
+                radial-gradient(
+                    circle at center,
+                    #471703,
+                    #100603
+                );
         }
 
         .visarjan h2 {
 
-            color: #ffb300;
+            color: var(--gold);
 
-            font-size: 40px;
+            font-size: 42px;
         }
 
-        .visarjan p {
+        .visarjan-text {
 
             max-width: 700px;
 
             margin: 15px auto;
 
-            color: #d6bfa5;
+            color: #d5bdab;
         }
 
         .morya {
 
             margin-top: 25px;
 
-            font-size: 32px;
+            font-size: 27px;
 
-            color: #ffca58;
+            color: var(--gold-light);
 
-            font-weight: bold;
+            font-weight: 800;
         }
 
-        /* ================= FOOTER ================= */
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
 
         footer {
 
+            background: #080302;
+
+            border-top:
+                1px solid
+                rgba(255,189,50,0.12);
+
             text-align: center;
 
-            padding: 35px;
+            padding: 45px 20px;
 
-            background: #090403;
+            color: #8f7968;
+        }
 
-            color: #927d68;
+        .footer-logo {
+
+            font-size: 23px;
+
+            color: var(--gold);
+
+            font-weight: 800;
+
+            margin-bottom: 8px;
         }
 
         footer strong {
-            color: #ffb300;
+            color: var(--gold);
         }
 
-        /* ================= MOBILE ================= */
+        .footer-bottom {
 
-        @media(max-width: 900px) {
+            margin-top: 20px;
 
-            .festival-grid {
+            padding-top: 20px;
 
+            border-top:
+                1px solid
+                rgba(255,255,255,0.06);
+
+            font-size: 13px;
+        }
+
+
+        /* =====================================================
+           FLOATING BUTTON
+        ===================================================== */
+
+        .top-button {
+
+            position: fixed;
+
+            right: 22px;
+            bottom: 22px;
+
+            width: 45px;
+            height: 45px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: var(--gold);
+
+            color: #321100;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            z-index: 5000;
+
+            box-shadow:
+                0 8px 25px
+                rgba(0,0,0,0.35);
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media(max-width: 950px) {
+
+            nav ul {
+                gap: 15px;
+            }
+
+            .intro-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-grid {
                 grid-template-columns:
                     repeat(2, 1fr);
             }
 
             .gallery {
-
                 grid-template-columns:
                     repeat(2, 1fr);
             }
 
-            .hero h1 {
-
-                font-size: 48px;
-            }
         }
 
-        @media(max-width: 600px) {
+
+        @media(max-width: 650px) {
+
+            nav {
+                padding: 14px 5%;
+            }
 
             nav ul {
                 display: none;
             }
 
-            .festival-grid,
-            .gallery {
-
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-
-                font-size: 38px;
-            }
-
-            .hero p {
-
-                font-size: 17px;
-            }
-
-            .aarti {
-
-                padding: 25px 18px;
-            }
-
-            .aarti-text {
-
-                font-size: 16px;
+            .logo {
+                font-size: 18px;
             }
 
             section {
-
-                padding: 60px 5%;
+                padding: 65px 5%;
             }
+
+            .hero {
+                min-height: 95vh;
+            }
+
+            .ganesh-symbol {
+                font-size: 60px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+            }
+
+            .feature-grid,
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item.large {
+                grid-column: span 1;
+            }
+
+            .gallery-item {
+                height: 260px;
+            }
+
+            .intro-image img {
+                height: 350px;
+            }
+
+            .aarti-card {
+                padding: 28px 18px;
+            }
+
+            .aarti-text {
+                font-size: 15px;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .event {
+                padding-left: 60px;
+            }
+
+            .event-icon {
+                width: 42px;
+                height: 42px;
+            }
+
         }
 
     </style>
@@ -611,24 +1222,30 @@
 <body>
 
 
-<!-- ================= NAVBAR ================= -->
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
 
 <nav>
 
-    <div class="logo">
+    <a href="#home" class="logo">
 
-        🕉️ गणपती <span>बाप्पा</span>
+        <span class="logo-icon">🙏</span>
 
-    </div>
+        श्री पद्मावती
+        <span>गणेश मंडळ</span>
+
+    </a>
+
 
     <ul>
 
         <li>
-            <a href="#home">Home</a>
+            <a href="#home">मुख्यपृष्ठ</a>
         </li>
 
         <li>
-            <a href="#festival">उत्सव</a>
+            <a href="#about">आमच्याबद्दल</a>
         </li>
 
         <li>
@@ -640,7 +1257,16 @@
         </li>
 
         <li>
-            <a href="#visarjan">विसर्जन</a>
+            <a href="#programs">कार्यक्रम</a>
+        </li>
+
+        <li>
+            <a
+                href="#contact"
+                class="nav-button"
+            >
+                संपर्क
+            </a>
         </li>
 
     </ul>
@@ -648,49 +1274,64 @@
 </nav>
 
 
-<!-- ================= HERO ================= -->
+<!-- =====================================================
+     HERO
+===================================================== -->
 
-<section
-    class="hero"
-    id="home"
->
+<section class="hero" id="home">
 
     <div class="hero-content">
 
-        <div class="ganesh-icon">
-            🙏
+        <div class="small-title">
+
+            🌺 श्री पद्मावती गणेश मंडळ 🌺
+
         </div>
+
+
+        <div class="ganesh-symbol">
+            🕉️
+        </div>
+
 
         <h1>
 
-            गणपती <span>बाप्पा मोरया!</span>
+            गणपती
+            <span>बाप्पा मोरया!</span>
 
         </h1>
 
-        <p>
 
-            मंगलमूर्ती मोरया ❤️
+        <p class="hero-subtitle">
+
+            भक्तीच्या रंगात,
+            संस्कृतीच्या संगतीत
+            आणि एकतेच्या भावनेत
+            साजरा करूया गणेशोत्सव.
 
             <br>
 
-            भक्ती • संस्कृती • आनंद • एकता
+            <strong>
+                मंगलमूर्ती मोरया! 🙏
+            </strong>
 
         </p>
+
 
         <div class="hero-buttons">
 
             <a
                 href="#aarti"
-                class="btn primary"
+                class="btn btn-primary"
             >
-                🪔 आरती पहा
+                🪔 आरती पाहा
             </a>
 
             <a
                 href="#gallery"
-                class="btn secondary"
+                class="btn btn-outline"
             >
-                📸 Gallery
+                📸 Gallery पाहा
             </a>
 
         </div>
@@ -700,354 +1341,794 @@
 </section>
 
 
-<!-- ================= FESTIVAL ================= -->
+<!-- =====================================================
+     ABOUT MANDAL
+===================================================== -->
 
-<section
-    class="festival"
-    id="festival"
->
+<section class="intro" id="about">
 
-    <div class="section-title">
+    <div class="container">
 
-        <h2>🌺 गणेशोत्सव</h2>
+        <div class="section-heading">
 
-        <p>
-            श्रद्धा, भक्ती आणि आनंदाचा उत्सव
-        </p>
+            <div class="overline">
+                OUR MANDAL
+            </div>
+
+            <h2>
+                श्री <span>पद्मावती गणेश मंडळ</span>
+            </h2>
+
+            <p>
+                श्रद्धा • संस्कृती • एकता • सामाजिक बांधिलकी
+            </p>
+
+        </div>
+
+
+        <div class="intro-grid">
+
+
+            <div class="intro-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1567591414240-e6b7f0e8a6a4?auto=format&fit=crop&w=1000&q=85"
+                    alt="Ganpati Bappa"
+                >
+
+                <div class="image-badge">
+                    🙏 गणपती बाप्पा मोरया
+                </div>
+
+            </div>
+
+
+            <div class="intro-text">
+
+                <h3>
+                    आमच्या मंडळाबद्दल
+                </h3>
+
+
+                <p>
+
+                    <strong>
+                        श्री पद्मावती गणेश मंडळ
+                    </strong>
+                    हे श्रद्धा, भक्ती, संस्कृती आणि
+                    एकतेचा सुंदर संगम आहे.
+
+                </p>
+
+
+                <p>
+
+                    दरवर्षी गणेशोत्सव मोठ्या उत्साहात
+                    आणि भक्तिभावाने साजरा करताना
+                    परिसरातील सर्वांना एकत्र आणण्याचा
+                    आमचा प्रयत्न असतो.
+
+                </p>
+
+
+                <p>
+
+                    बाप्पाच्या आगमनापासून ते विसर्जनापर्यंत
+                    धार्मिक, सांस्कृतिक आणि सामाजिक
+                    उपक्रमांच्या माध्यमातून गणेशोत्सवाचा
+                    आनंद सर्वांसोबत साजरा केला जातो.
+
+                </p>
+
+
+                <div class="highlight-box">
+
+                    <strong>
+                        "भक्तीने बाप्पाचे स्वागत,
+                        एकतेने उत्सव साजरा
+                        आणि आनंदाने बाप्पाला निरोप."
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
 
+</section>
 
-    <div class="festival-grid">
+
+<!-- =====================================================
+     FESTIVAL FEATURES
+===================================================== -->
+
+<section class="features">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="overline">
+                GANESHOTSAV
+            </div>
+
+            <h2>
+                गणेशोत्सवातील <span>विशेष क्षण</span>
+            </h2>
+
+            <p>
+                बाप्पाच्या आगमनापासून विसर्जनापर्यंतचा
+                भक्तिमय प्रवास.
+            </p>
+
+        </div>
 
 
-        <div class="festival-card">
+        <div class="feature-grid">
 
-            <div class="icon">
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🥁
+                </div>
+
+                <h3>
+                    बाप्पाचे आगमन
+                </h3>
+
+                <p>
+                    ढोल-ताशांच्या गजरात आणि
+                    भक्तिमय वातावरणात बाप्पाचे
+                    उत्साहात स्वागत.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🪔
+                </div>
+
+                <h3>
+                    आरती व पूजा
+                </h3>
+
+                <p>
+                    दररोज सकाळ-संध्याकाळ
+                    भक्तिभावाने आरती आणि पूजा.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🎭
+                </div>
+
+                <h3>
+                    सांस्कृतिक कार्यक्रम
+                </h3>
+
+                <p>
+                    विविध सांस्कृतिक आणि
+                    मनोरंजनात्मक कार्यक्रमांचे आयोजन.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    ❤️
+                </div>
+
+                <h3>
+                    सामाजिक उपक्रम
+                </h3>
+
+                <p>
+                    समाजाच्या हितासाठी विविध
+                    सामाजिक उपक्रमांमध्ये सहभाग.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🌺
+                </div>
+
+                <h3>
+                    आकर्षक सजावट
+                </h3>
+
+                <p>
+                    बाप्पाच्या दर्शनासाठी सुंदर
+                    आणि भक्तिमय सजावट.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🌊
+                </div>
+
+                <h3>
+                    विसर्जन सोहळा
+                </h3>
+
+                <p>
+                    आनंद आणि भक्तिभावाने
+                    बाप्पाला निरोप.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     GALLERY
+===================================================== -->
+
+<section class="gallery-section" id="gallery">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="overline">
+                MEMORIES
+            </div>
+
+            <h2>
+                बाप्पाची <span>सुंदर झलक</span>
+            </h2>
+
+            <p>
+                गणेशोत्सवातील काही सुंदर क्षण.
+            </p>
+
+        </div>
+
+
+        <div class="gallery">
+
+
+            <div class="gallery-item large">
+
+                <img
+                    src="https://images.unsplash.com/photo-1567591414240-e6b7f0e8a6a4?auto=format&fit=crop&w=1200&q=85"
+                    alt="Ganpati"
+                >
+
+                <div class="gallery-overlay">
+                    <span>
+                        🙏 बाप्पाचे सुंदर दर्शन
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img
+                    src="https://images.unsplash.com/photo-1606293926075-69a00dbfde81?auto=format&fit=crop&w=900&q=85"
+                    alt="Ganpati Festival"
+                >
+
+                <div class="gallery-overlay">
+                    <span>
+                        🌺 गणेशोत्सव
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img
+                    src="https://images.unsplash.com/photo-1599577181049-5c6c4c0d9f96?auto=format&fit=crop&w=900&q=85"
+                    alt="Festival"
+                >
+
+                <div class="gallery-overlay">
+                    <span>
+                        🪔 भक्तिमय वातावरण
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="gallery-item large">
+
+                <img
+                    src="https://images.unsplash.com/photo-1567591414240-e6b7f0e8a6a4?auto=format&fit=crop&w=1200&q=85"
+                    alt="Ganpati Bappa"
+                >
+
+                <div class="gallery-overlay">
+                    <span>
+                        ❤️ गणपती बाप्पा मोरया
+                    </span>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     AARTI
+===================================================== -->
+
+<section class="aarti-section" id="aarti">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="overline">
+                GANPATI AARTI
+            </div>
+
+            <h2>
+                🪔 बाप्पाची <span>आरती</span>
+            </h2>
+
+            <p>
+                भक्तिभावाने श्री गणपती बाप्पाच्या चरणी
+            </p>
+
+        </div>
+
+
+        <div class="aarti-card">
+
+            <div class="diya">
                 🪔
             </div>
 
+
             <h3>
-                गणपती स्थापना
+                सुखकर्ता दुःखहर्ता
             </h3>
 
-            <p>
-                भक्तिभावाने बाप्पाचे स्वागत
-                आणि स्थापना.
-            </p>
 
-        </div>
+            <div class="aarti-text">
 
+                <div class="main-line">
+                    सुखकर्ता दुःखहर्ता वार्ता विघ्नाची
+                </div>
 
-        <div class="festival-card">
+                नुरवी पुरवी प्रेम कृपा जयाची
+                <br>
 
-            <div class="icon">
-                🌺
+                सर्वांगी सुंदर उटी शेंदुराची
+                <br>
+
+                कंठी झळके माळ मुक्ताफळांची
+
+                <br><br>
+
+                <div class="main-line">
+                    जय देव जय देव जय मंगलमूर्ती
+                </div>
+
+                दर्शनमात्रे मनःकामना पुरती
+
+                <br><br>
+
+                रत्नखचित फरा तुज गौरीकुमरा
+                <br>
+
+                चंदनाची उटी कुंकुमकेशरा
+                <br>
+
+                हिरे जडित मुकुट शोभतो बरा
+                <br>
+
+                रुणझुणती नूपुरे चरणी घागरिया
+
+                <br><br>
+
+                <div class="main-line">
+                    जय देव जय देव जय मंगलमूर्ती
+                </div>
+
             </div>
 
-            <h3>
-                आरती
-            </h3>
 
-            <p>
-                सकाळ-संध्याकाळ आरती,
-                मंत्र आणि भक्तिगीते.
-            </p>
+            <div class="aarti-controls">
 
-        </div>
+                <button
+                    class="aarti-button"
+                    onclick="playAarti()"
+                >
+                    🔊 आरती ऐका
+                </button>
 
-
-        <div class="festival-card">
-
-            <div class="icon">
-                🌊
             </div>
 
-            <h3>
-                विसर्जन
-            </h3>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PROGRAMS
+===================================================== -->
+
+<section class="programs" id="programs">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="overline">
+                FESTIVAL PROGRAMS
+            </div>
+
+            <h2>
+                गणेशोत्सवातील <span>कार्यक्रम</span>
+            </h2>
 
             <p>
-                आनंद आणि भक्तिभावाने
-                बाप्पाला निरोप.
+                भक्ती आणि आनंदाने भरलेले दिवस.
             </p>
 
         </div>
 
 
-    </div>
-
-</section>
+        <div class="timeline">
 
 
-<!-- ================= MAIN GANPATI ================= -->
+            <div class="event">
 
-<section>
+                <div class="event-icon">
+                    🙏
+                </div>
 
-    <div class="section-title">
+                <div class="event-content">
 
-        <h2>🙏 बाप्पाचे सुंदर दर्शन</h2>
+                    <h3>
+                        गणपती स्थापना
+                    </h3>
 
-        <p>
-            गणपती बाप्पा मोरया!
-        </p>
+                    <p>
+                        मंगलमय वातावरणात बाप्पाची
+                        स्थापना आणि विशेष पूजा.
+                    </p>
 
-    </div>
+                </div>
 
-
-    <div class="main-photo">
-
-        <img
-            src="https://bloomsonly.in/cdn/shop/files/WhatsApp_Image_2025-07-11_at_11.53.25.jpg?v=1752995781"
-            alt="Ganpati Decoration"
-        >
-
-    </div>
-
-</section>
+            </div>
 
 
-<!-- ================= GALLERY ================= -->
+            <div class="event">
 
-<section id="gallery">
+                <div class="event-icon">
+                    🪔
+                </div>
 
-    <div class="section-title">
+                <div class="event-content">
 
-        <h2>📸 Ganpati Gallery</h2>
+                    <h3>
+                        महाआरती
+                    </h3>
 
-        <p>
-            बाप्पाच्या सुंदर सजावटीचे क्षण
-        </p>
+                    <p>
+                        सर्व भाविकांच्या उपस्थितीत
+                        भक्तिभावाने महाआरती.
+                    </p>
 
-    </div>
+                </div>
+
+            </div>
 
 
-    <div class="gallery">
+            <div class="event">
+
+                <div class="event-icon">
+                    🎤
+                </div>
+
+                <div class="event-content">
+
+                    <h3>
+                        सांस्कृतिक कार्यक्रम
+                    </h3>
+
+                    <p>
+                        विविध सांस्कृतिक कार्यक्रम,
+                        भजन, गीत आणि मनोरंजन.
+                    </p>
+
+                </div>
+
+            </div>
 
 
-        <div class="gallery-item">
+            <div class="event">
 
-            <img
-                src="https://bloomsonly.in/cdn/shop/files/WhatsApp_Image_2025-07-11_at_11.53.25.jpg?v=1752995781"
-                alt="Ganpati Floral Decoration"
-            >
+                <div class="event-icon">
+                    🥁
+                </div>
+
+                <div class="event-content">
+
+                    <h3>
+                        विसर्जन मिरवणूक
+                    </h3>
+
+                    <p>
+                        ढोल-ताशांच्या गजरात आणि
+                        "गणपती बाप्पा मोरया"च्या जयघोषात
+                        बाप्पाला निरोप.
+                    </p>
+
+                </div>
+
+            </div>
+
 
         </div>
-
-
-        <div class="gallery-item">
-
-            <img
-                src="https://feeds.abplive.com/onecms/images/uploaded-images/2025/08/27/fa34e8a30039f12a426ad63baf1c519fe0fd5.jpg?impolicy=abp_cdn&imwidth=720"
-                alt="Ganpati Home Decoration"
-            >
-
-        </div>
-
-
-        <div class="gallery-item">
-
-            <img
-                src="https://i.pinimg.com/736x/f5/f7/91/f5f791084fa1a7d101fdb39054af4a57.jpg"
-                alt="Ganpati Festival Decoration"
-            >
-
-        </div>
-
-
-        <div class="gallery-item">
-
-            <img
-                src="https://i.pinimg.com/originals/9c/48/84/9c4884c8e7a1e38f2d34f344e12484cd.jpg"
-                alt="Ganpati Decoration"
-            >
-
-        </div>
-
-
-        <div class="gallery-item">
-
-            <img
-                src="https://cdn.shopify.com/s/files/1/0549/6910/6583/files/AD_4nXdSr8YM6c8UcWGLt0T5AGorRiBnn0LzOBnQ3aOFyMo_khBCYZevBERoF8H8ohO8qMypdpzosDZ1T1mhj1eBV_iMtCNkdFRrEJzK8Hl8dWCHETKTL1iSsXEQ2s-R0fgLCiUTWYUoxQ.jpg?v=1738260209"
-                alt="Ganpati Altar"
-            >
-
-        </div>
-
-
-        <div class="gallery-item">
-
-            <img
-                src="https://feeds.abplive.com/onecms/images/uploaded-images/2025/08/27/fa34e8a30039f12a426ad63baf1c519fe0fd5.jpg?impolicy=abp_cdn&imwidth=720"
-                alt="Ganpati Bappa"
-            >
-
-        </div>
-
 
     </div>
 
 </section>
 
 
-<!-- ================= AARTI ================= -->
-
-<section
-    class="aarti-section"
-    id="aarti"
->
-
-    <div class="section-title">
-
-        <h2>🪔 गणपतीची आरती</h2>
-
-        <p>
-            श्री गणपती बाप्पाच्या चरणी भक्तिभावाने
-        </p>
-
-    </div>
-
-
-    <div class="aarti">
-
-        <div class="aarti-icon">
-            🪔
-        </div>
-
-        <h3>
-            सुखकर्ता दुःखहर्ता
-        </h3>
-
-
-        <div class="aarti-text">
-
-            <strong>
-                सुखकर्ता दुःखहर्ता वार्ता विघ्नाची
-            </strong>
-            <br>
-
-            नुरवी पुरवी प्रेम कृपा जयाची
-            <br>
-
-            सर्वांगी सुंदर उटी शेंदुराची
-            <br>
-
-            कंठी झळके माळ मुक्ताफळांची
-            <br><br>
-
-
-            <strong>
-                जय देव जय देव जय मंगलमूर्ती
-            </strong>
-            <br>
-
-            दर्शनमात्रे मनःकामना पुरती
-            <br><br>
-
-
-            रत्नखचित फरा तुज गौरीकुमरा
-            <br>
-
-            चंदनाची उटी कुंकुमकेशरा
-            <br>
-
-            हिरे जडित मुकुट शोभतो बरा
-            <br>
-
-            रुणझुणती नूपुरे चरणी घागरिया
-            <br><br>
-
-
-            <strong>
-                जय देव जय देव जय मंगलमूर्ती
-            </strong>
-
-        </div>
-
-
-        <button
-            class="listen-btn"
-            onclick="readAarti()"
-        >
-
-            🔊 आरती ऐका
-
-        </button>
-
-    </div>
-
-</section>
-
-
-<!-- ================= QUOTE ================= -->
+<!-- =====================================================
+     QUOTE
+===================================================== -->
 
 <section class="quote">
 
+    <div class="quote-symbol">
+        🙏
+    </div>
+
     <h2>
-        "गणपती बाप्पा मोरया!"
+        गणपती बाप्पा मोरया!
     </h2>
 
     <p>
-        सुखकर्ता • दुःखहर्ता • मंगलमूर्ती
+        मंगलमूर्ती मोरया • पुढच्या वर्षी लवकर या!
     </p>
 
 </section>
 
 
-<!-- ================= VISARJAN ================= -->
+<!-- =====================================================
+     VISARJAN
+===================================================== -->
 
-<section
-    class="visarjan"
-    id="visarjan"
->
+<section class="visarjan">
 
-    <h2>
-        🌊 बाप्पाचे विसर्जन
-    </h2>
+    <div class="container">
 
-    <p>
+        <div class="section-heading">
 
-        बाप्पाला भक्तिभावाने निरोप देताना
-        एकच प्रार्थना —
+            <div class="overline">
+                GANPATI VISARJAN
+            </div>
 
-        पुढच्या वर्षी लवकर या,
-        सुख-समृद्धी आणि आनंद घेऊन या.
+            <h2>
+                बाप्पाला <span>निरोप</span>
+            </h2>
 
-    </p>
+        </div>
 
-    <div class="morya">
 
-        गणपती बाप्पा मोरया! 🙏
-        <br>
+        <p class="visarjan-text">
 
-        पुढच्या वर्षी लवकर या! ❤️
+            गणेशोत्सवाचे हे दिवस आनंदाने,
+            भक्तीने आणि एकतेने साजरे करून
+            बाप्पाला निरोप देताना मनात एकच भावना —
+
+        </p>
+
+
+        <div class="morya">
+
+            "बाप्पा, पुढच्या वर्षी लवकर या!" ❤️
+
+            <br>
+
+            गणपती बाप्पा मोरया! 🙏
+
+        </div>
 
     </div>
 
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section
+    class="features"
+    id="contact"
+>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="overline">
+                CONTACT
+            </div>
+
+            <h2>
+                श्री पद्मावती <span>गणेश मंडळ</span>
+            </h2>
+
+            <p>
+                गणेशोत्सवाच्या शुभेच्छा!
+            </p>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    📍
+                </div>
+
+                <h3>
+                    आमचे ठिकाण
+                </h3>
+
+                <p>
+                    श्री पद्मावती गणेश मंडळ
+                    <br>
+                    आपला परिसर
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    📞
+                </div>
+
+                <h3>
+                    संपर्क
+                </h3>
+
+                <p>
+                    मंडळाच्या सदस्यांशी
+                    संपर्क साधण्यासाठी
+                    आमच्याशी संपर्क करा.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    ❤️
+                </div>
+
+                <h3>
+                    आपले स्वागत आहे
+                </h3>
+
+                <p>
+                    बाप्पाच्या दर्शनासाठी
+                    सर्व भाविकांचे मनःपूर्वक स्वागत!
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
-    <p>
-        © 2026
-        <strong>Ganpati Bappa Morya</strong>
-    </p>
+    <div class="footer-logo">
+
+        🙏 श्री पद्मावती गणेश मंडळ
+
+    </div>
+
 
     <p>
-        Made with ❤️ for Bappa
+
+        भक्ती • संस्कृती • एकता
+
     </p>
+
+
+    <div class="footer-bottom">
+
+        © 2026
+        <strong>
+            श्री पद्मावती गणेश मंडळ
+        </strong>
+
+        | गणपती बाप्पा मोरया! 🙏
+
+    </div>
 
 </footer>
 
 
+<!-- =====================================================
+     TOP BUTTON
+===================================================== -->
+
+<div
+    class="top-button"
+    onclick="window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    })"
+>
+    ↑
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
 <script>
 
-    function readAarti() {
+    /* ================================================
+       AARTI VOICE
+    ================================================= */
 
-        const text = `
+    function playAarti() {
+
+        const aarti = `
 
         सुखकर्ता दुःखहर्ता वार्ता विघ्नाची.
         नुरवी पुरवी प्रेम कृपा जयाची.
@@ -1058,38 +2139,85 @@
         जय देव जय देव जय मंगलमूर्ती.
         दर्शनमात्रे मनःकामना पुरती.
 
+        रत्नखचित फरा तुज गौरीकुमरा.
+        चंदनाची उटी कुंकुमकेशरा.
+
+        हिरे जडित मुकुट शोभतो बरा.
+        रुणझुणती नूपुरे चरणी घागरिया.
+
+        जय देव जय देव जय मंगलमूर्ती.
+
         गणपती बाप्पा मोरया.
+        मंगलमूर्ती मोरया.
 
         `;
+
 
         if ("speechSynthesis" in window) {
 
             window.speechSynthesis.cancel();
 
+
             const speech =
-                new SpeechSynthesisUtterance(text);
+                new SpeechSynthesisUtterance(aarti);
+
 
             speech.lang = "mr-IN";
 
-            speech.rate = 0.8;
+            speech.rate = 0.78;
 
             speech.pitch = 1;
 
+            speech.volume = 1;
+
+
             window.speechSynthesis.speak(speech);
 
-        } else {
+        }
+
+        else {
 
             alert(
-                "तुमच्या browser मध्ये voice feature उपलब्ध नाही."
+                "तुमच्या browser मध्ये Voice सुविधा उपलब्ध नाही."
             );
 
         }
 
     }
 
+
+    /* ================================================
+       NAVBAR ON SCROLL
+    ================================================= */
+
+    window.addEventListener(
+        "scroll",
+        function () {
+
+            const nav =
+                document.querySelector("nav");
+
+
+            if (window.scrollY > 50) {
+
+                nav.style.background =
+                    "rgba(10, 3, 1, 0.96)";
+
+            }
+
+            else {
+
+                nav.style.background =
+                    "rgba(15, 5, 2, 0.82)";
+
+            }
+
+        }
+    );
+
+
 </script>
 
 
 </body>
-
 </html>
