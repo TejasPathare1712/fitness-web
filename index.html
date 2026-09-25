@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FitTrack | Personal Fitness Dashboard</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: white;
+            line-height: 1.6;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(15, 23, 42, 0.95);
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #22c55e;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #22c55e;
+        }
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background:
+                radial-gradient(circle at top, #163824, transparent 40%),
+                #0f172a;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #22c55e;
+        }
+
+        .hero p {
+            color: #94a3b8;
+            font-size: 19px;
+            margin-bottom: 35px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            background: #22c55e;
+            color: #052e16;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #16a34a;
+            color: white;
+        }
+
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 35px;
+        }
+
+        .section-title p {
+            color: #94a3b8;
+            margin-top: 8px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .stat-card {
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .stat-card h3 {
+            color: #22c55e;
+            font-size: 32px;
+        }
+
+        .stat-card p {
+            color: #94a3b8;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        .calculator-container {
+            max-width: 650px;
+            margin: auto;
+            background: #1e293b;
+            padding: 35px;
+            border-radius: 12px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            color: #cbd5e1;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 13px;
+            background: #0f172a;
+            border: 1px solid #334155;
+            color: white;
+            border-radius: 6px;
+            outline: none;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #22c55e;
+        }
+
+        .calculate-btn {
+            width: 100%;
+            margin-top: 20px;
+            padding: 14px;
+            border: none;
+            border-radius: 7px;
+            background: #22c55e;
+            color: #052e16;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .calculate-btn:hover {
+            background: #16a34a;
+            color: white;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 20px;
+            background: #0f172a;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .result h3 {
+            color: #22c55e;
+        }
+
+        .workout {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .workout-day {
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        .workout-day h3 {
+            color: #22c55e;
+            margin-bottom: 15px;
+        }
+
+        .workout-day ul {
+            padding-left: 20px;
+            color: #cbd5e1;
+        }
+
+        .water-box {
+            text-align: center;
+            max-width: 600px;
+            margin: auto;
+            background: #1e293b;
+            padding: 40px;
+            border-radius: 12px;
+        }
+
+        .water-count {
+            font-size: 60px;
+            color: #38bdf8;
+            margin: 20px;
+        }
+
+        .water-buttons button {
+            padding: 12px 22px;
+            margin: 5px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .add-water {
+            background: #38bdf8;
+        }
+
+        .reset-water {
+            background: #334155;
+            color: white;
+        }
+
+        .progress-container {
+            width: 100%;
+            height: 12px;
+            background: #0f172a;
+            border-radius: 20px;
+            margin-top: 25px;
+            overflow: hidden;
+        }
+
+        .progress {
+            width: 0%;
+            height: 100%;
+            background: #38bdf8;
+            transition: 0.3s;
+        }
+
+        footer {
+            text-align: center;
+            padding: 35px;
+            background: #020617;
+            color: #64748b;
+        }
+
+        footer span {
+            color: #22c55e;
+        }
+
+        @media(max-width: 900px) {
+
+            .stats,
+            .cards,
+            .workout {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+        }
+
+        @media(max-width: 600px) {
+
+            nav ul {
+                display: none;
+            }
+
+            .stats,
+            .cards,
+            .workout {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">
+        FitTrack
+    </div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#bmi">BMI</a></li>
+        <li><a href="#protein">Protein</a></li>
+        <li><a href="#workout">Workout</a></li>
+        <li><a href="#water">Water</a></li>
+    </ul>
+
+</nav>
+
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>
+            Build Your <span>Best Body.</span>
+        </h1>
+
+        <p>
+            A simple personal fitness dashboard to calculate BMI,
+            estimate protein requirements, follow workouts and
+            track your daily water intake.
+        </p>
+
+        <a href="#bmi" class="btn">
+            Start Your Fitness Journey
+        </a>
+
+    </div>
+
+</section>
+
+
+<section>
+
+    <div class="stats">
+
+        <div class="stat-card">
+            <h3>4+</h3>
+            <p>Fitness Tools</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>6</h3>
+            <p>Workout Days</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>8</h3>
+            <p>Glasses Daily</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>100%</h3>
+            <p>Free To Use</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="features">
+
+    <div class="section-title">
+
+        <h2>Fitness Tools</h2>
+
+        <p>
+            Everything you need to start tracking your fitness journey.
+        </p>
+
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="card-icon">⚖️</div>
+
+            <h3>BMI Calculator</h3>
+
+            <p>
+                Calculate your Body Mass Index using your
+                height and weight.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">🥗</div>
+
+            <h3>Protein Calculator</h3>
+
+            <p>
+                Estimate your daily protein requirement
+                based on body weight and activity.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">💪</div>
+
+            <h3>Workout Plan</h3>
+
+            <p>
+                Follow a simple weekly workout schedule
+                covering major muscle groups.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">💧</div>
+
+            <h3>Water Tracker</h3>
+
+            <p>
+                Track the number of glasses of water
+                you drink during the day.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">🏃</div>
+
+            <h3>Stay Active</h3>
+
+            <p>
+                Build consistency with regular cardio,
+                strength training and recovery.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">😴</div>
+
+            <h3>Recovery</h3>
+
+            <p>
+                Remember that sleep and recovery are
+                important parts of your fitness routine.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="bmi">
+
+    <div class="section-title">
+
+        <h2>BMI Calculator</h2>
+
+        <p>
+            Enter your height and weight to calculate your BMI.
+        </p>
+
+    </div>
+
+
+    <div class="calculator-container">
+
+        <label>
+            Weight (kg)
+        </label>
+
+        <input
+            type="number"
+            id="weight"
+            placeholder="Example: 70"
+        >
+
+
+        <label>
+            Height (cm)
+        </label>
+
+        <input
+            type="number"
+            id="height"
+            placeholder="Example: 175"
+        >
+
+
+        <button
+            class="calculate-btn"
+            onclick="calculateBMI()"
+        >
+            Calculate BMI
+        </button>
+
+
+        <div
+            class="result"
+            id="bmiResult"
+        >
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="protein">
+
+    <div class="section-title">
+
+        <h2>Protein Calculator</h2>
+
+        <p>
+            Get a simple protein estimate based on your body weight.
+        </p>
+
+    </div>
+
+
+    <div class="calculator-container">
+
+        <label>
+            Your Weight (kg)
+        </label>
+
+        <input
+            type="number"
+            id="proteinWeight"
+            placeholder="Example: 70"
+        >
+
+
+        <label>
+            Activity Level
+        </label>
+
+        <select id="activity">
+
+            <option value="0.8">
+                Low Activity
+            </option>
+
+            <option value="1.2">
+                Light Exercise
+            </option>
+
+            <option value="1.6">
+                Regular Gym
+            </option>
+
+            <option value="2">
+                Heavy Training
+            </option>
+
+        </select>
+
+
+        <button
+            class="calculate-btn"
+            onclick="calculateProtein()"
+        >
+            Calculate Protein
+        </button>
+
+
+        <div
+            class="result"
+            id="proteinResult"
+        >
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="workout">
+
+    <div class="section-title">
+
+        <h2>Weekly Workout Plan</h2>
+
+        <p>
+            Example workout split for your fitness dashboard.
+        </p>
+
+    </div>
+
+
+    <div class="workout">
+
+        <div class="workout-day">
+
+            <h3>Monday — Chest</h3>
+
+            <ul>
+                <li>Bench Press</li>
+                <li>Incline Dumbbell Press</li>
+                <li>Chest Fly</li>
+                <li>Push Ups</li>
+            </ul>
+
+        </div>
+
+
+        <div class="workout-day">
+
+            <h3>Tuesday — Back</h3>
+
+            <ul>
+                <li>Lat Pulldown</li>
+                <li>Seated Row</li>
+                <li>Dumbbell Row</li>
+                <li>Back Extension</li>
+            </ul>
+
+        </div>
+
+
+        <div class="workout-day">
+
+            <h3>Wednesday — Legs</h3>
+
+            <ul>
+                <li>Squats</li>
+                <li>Leg Press</li>
+                <li>Leg Extension</li>
+                <li>Calf Raises</li>
+            </ul>
+
+        </div>
+
+
+        <div class="workout-day">
+
+            <h3>Thursday — Shoulders</h3>
+
+            <ul>
+                <li>Shoulder Press</li>
+                <li>Lateral Raises</li>
+                <li>Front Raises</li>
+                <li>Reverse Fly</li>
+            </ul>
+
+        </div>
+
+
+        <div class="workout-day">
+
+            <h3>Friday — Arms</h3>
+
+            <ul>
+                <li>Bicep Curl</li>
+                <li>Hammer Curl</li>
+                <li>Tricep Pushdown</li>
+                <li>Overhead Extension</li>
+            </ul>
+
+        </div>
+
+
+        <div class="workout-day">
+
+            <h3>Saturday — Cardio</h3>
+
+            <ul>
+                <li>Running</li>
+                <li>Cycling</li>
+                <li>Jump Rope</li>
+                <li>Core Workout</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="water">
+
+    <div class="section-title">
+
+        <h2>Daily Water Tracker</h2>
+
+        <p>
+            Keep track of your daily water intake.
+        </p>
+
+    </div>
+
+
+    <div class="water-box">
+
+        <h3>
+            Today's Water
+        </h3>
+
+        <div
+            class="water-count"
+            id="waterCount"
+        >
+            0 / 8
+        </div>
+
+        <p>
+            Glasses of water
+        </p>
+
+
+        <div class="water-buttons">
+
+            <button
+                class="add-water"
+                onclick="addWater()"
+            >
+                + Add Glass
+            </button>
+
+            <button
+                class="reset-water"
+                onclick="resetWater()"
+            >
+                Reset
+            </button>
+
+        </div>
+
+
+        <div class="progress-container">
+
+            <div
+                class="progress"
+                id="waterProgress"
+            >
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        © 2026 <span>FitTrack</span> |
+        Personal Fitness Dashboard
+    </p>
+
+    <p>
+        Built using HTML, CSS & JavaScript
+    </p>
+
+</footer>
+
+
+<script>
+
+    function calculateBMI() {
+
+        const weight =
+            parseFloat(
+                document.getElementById("weight").value
+            );
+
+        const height =
+            parseFloat(
+                document.getElementById("height").value
+            );
+
+
+        const result =
+            document.getElementById("bmiResult");
+
+
+        if (!weight || !height) {
+
+            result.style.display = "block";
+
+            result.innerHTML =
+                "<p>Please enter valid height and weight.</p>";
+
+            return;
+        }
+
+
+        const heightMeter =
+            height / 100;
+
+
+        const bmi =
+            weight / (heightMeter * heightMeter);
+
+
+        let category = "";
+
+
+        if (bmi < 18.5) {
+
+            category = "Underweight";
+
+        }
+
+        else if (bmi < 25) {
+
+            category = "Normal Weight";
+
+        }
+
+        else if (bmi < 30) {
+
+            category = "Overweight";
+
+        }
+
+        else {
+
+            category = "Obesity Range";
+
+        }
+
+
+        result.style.display = "block";
+
+
+        result.innerHTML = `
+
+            <h3>Your BMI: ${bmi.toFixed(1)}</h3>
+
+            <p>
+                Category: ${category}
+            </p>
+
+        `;
+
+    }
+
+
+
+    function calculateProtein() {
+
+        const weight =
+            parseFloat(
+                document.getElementById("proteinWeight").value
+            );
+
+
+        const activity =
+            parseFloat(
+                document.getElementById("activity").value
+            );
+
+
+        const result =
+            document.getElementById("proteinResult");
+
+
+        if (!weight) {
+
+            result.style.display = "block";
+
+            result.innerHTML =
+                "<p>Please enter a valid weight.</p>";
+
+            return;
+        }
+
+
+        const protein =
+            weight * activity;
+
+
+        result.style.display = "block";
+
+
+        result.innerHTML = `
+
+            <h3>
+                ${protein.toFixed(0)} g/day
+            </h3>
+
+            <p>
+                Estimated daily protein intake based
+                on the selected activity level.
+            </p>
+
+        `;
+
+    }
+
+
+
+    let water =
+        Number(localStorage.getItem("water")) || 0;
+
+
+    function updateWater() {
+
+        const count =
+            document.getElementById("waterCount");
+
+
+        const progress =
+            document.getElementById("waterProgress");
+
+
+        count.innerText =
+            water + " / 8";
+
+
+        let percentage =
+            (water / 8) * 100;
+
+
+        if (percentage > 100) {
+
+            percentage = 100;
+
+        }
+
+
+        progress.style.width =
+            percentage + "%";
+
+
+        localStorage.setItem(
+            "water",
+            water
+        );
+
+    }
+
+
+
+    function addWater() {
+
+        water++;
+
+        updateWater();
+
+    }
+
+
+
+    function resetWater() {
+
+        water = 0;
+
+        updateWater();
+
+    }
+
+
+
+    updateWater();
+
+</script>
+
+</body>
+</html>
