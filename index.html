@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="mr">
 
-    <title>CricZone | Cricket Lover</title>
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>गणपती बाप्पा मोरया | Ganpati Festival</title>
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -18,89 +23,106 @@
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #07111f;
-            color: #ffffff;
-            line-height: 1.6;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #160b05;
+            color: #fff;
+            line-height: 1.7;
         }
 
         /* ================= NAVBAR ================= */
 
         nav {
+
             position: sticky;
             top: 0;
-            z-index: 1000;
+            z-index: 999;
 
             display: flex;
             justify-content: space-between;
             align-items: center;
 
-            padding: 18px 8%;
+            padding: 16px 7%;
 
-            background: rgba(7, 17, 31, 0.96);
-            border-bottom: 1px solid #1e293b;
+            background: rgba(25, 10, 3, 0.95);
+
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+
+            backdrop-filter: blur(10px);
         }
 
         .logo {
-            font-size: 25px;
+
+            font-size: 24px;
             font-weight: bold;
-            color: #22c55e;
+
+            color: #ffb300;
         }
 
         .logo span {
-            color: white;
+            color: #fff;
         }
 
         nav ul {
+
+            list-style: none;
+
             display: flex;
             gap: 25px;
-            list-style: none;
         }
 
         nav a {
-            color: #cbd5e1;
+
+            color: #fff;
             text-decoration: none;
+
             font-size: 14px;
+
             transition: 0.3s;
         }
 
         nav a:hover {
-            color: #22c55e;
+            color: #ffb300;
         }
 
         /* ================= HERO ================= */
 
         .hero {
-            min-height: 88vh;
+
+            min-height: 92vh;
 
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
 
             text-align: center;
-            padding: 50px 20px;
+
+            padding: 60px 20px;
 
             background:
-                radial-gradient(
-                    circle at center,
-                    #14532d 0%,
-                    #07111f 55%
-                );
+                linear-gradient(
+                    rgba(20, 5, 0, 0.55),
+                    rgba(20, 5, 0, 0.8)
+                ),
+                url("https://bloomsonly.in/cdn/shop/files/WhatsApp_Image_2025-07-11_at_11.53.25.jpg?v=1752995781");
+
+            background-size: cover;
+            background-position: center;
         }
 
         .hero-content {
-            max-width: 850px;
+            max-width: 900px;
         }
 
-        .hero-ball {
-            font-size: 70px;
-            margin-bottom: 20px;
-            animation: bounce 2s infinite;
+        .ganesh-icon {
+
+            font-size: 75px;
+
+            animation: floating 2.5s ease-in-out infinite;
         }
 
-        @keyframes bounce {
+        @keyframes floating {
 
-            0%, 100% {
+            0%,100% {
                 transform: translateY(0);
             }
 
@@ -110,20 +132,26 @@
         }
 
         .hero h1 {
-            font-size: 64px;
-            line-height: 1.1;
-            margin-bottom: 20px;
+
+            font-size: 65px;
+
+            margin-top: 15px;
+
+            text-shadow:
+                0 5px 20px rgba(0,0,0,0.8);
         }
 
         .hero h1 span {
-            color: #22c55e;
+            color: #ffb300;
         }
 
         .hero p {
-            color: #94a3b8;
-            font-size: 19px;
-            max-width: 650px;
-            margin: auto;
+
+            font-size: 21px;
+
+            color: #ffe9c2;
+
+            margin-top: 15px;
         }
 
         .hero-buttons {
@@ -131,390 +159,408 @@
         }
 
         .btn {
-            display: inline-block;
-            padding: 13px 28px;
-            margin: 6px;
 
-            border-radius: 7px;
+            display: inline-block;
+
+            padding: 13px 28px;
+
+            margin: 5px;
+
+            border-radius: 30px;
 
             text-decoration: none;
+
             font-weight: bold;
 
             transition: 0.3s;
         }
 
         .primary {
-            background: #22c55e;
-            color: #052e16;
+
+            background: #ffb300;
+            color: #3b1700;
         }
 
         .primary:hover {
-            background: #16a34a;
-            color: white;
+
+            background: #ff8f00;
+
+            transform: translateY(-3px);
         }
 
         .secondary {
-            border: 1px solid #334155;
-            color: white;
+
+            border: 1px solid #ffb300;
+
+            color: #ffb300;
         }
 
         .secondary:hover {
-            border-color: #22c55e;
-            color: #22c55e;
+
+            background: #ffb300;
+
+            color: #3b1700;
         }
 
-        /* ================= GENERAL ================= */
+        /* ================= COMMON ================= */
 
         section {
-            padding: 80px 8%;
+            padding: 85px 8%;
         }
 
         .section-title {
+
             text-align: center;
+
             margin-bottom: 45px;
         }
 
         .section-title h2 {
-            font-size: 38px;
+
+            font-size: 40px;
+
+            color: #ffb300;
         }
 
         .section-title p {
-            color: #94a3b8;
+
+            color: #d6bfa5;
+
             margin-top: 8px;
         }
 
-        /* ================= STATS ================= */
+        /* ================= FESTIVAL ================= */
 
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+        .festival {
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    #572006,
+                    #160b05
+                );
         }
 
-        .stat-card {
-            background: #111c2d;
-            border: 1px solid #1e293b;
+        .festival-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .festival-card {
+
+            background: rgba(255,255,255,0.06);
+
+            border: 1px solid
+                rgba(255,179,0,0.25);
 
             padding: 30px;
-            text-align: center;
 
-            border-radius: 12px;
+            border-radius: 18px;
+
+            text-align: center;
 
             transition: 0.3s;
         }
 
-        .stat-card:hover {
-            transform: translateY(-5px);
-            border-color: #22c55e;
+        .festival-card:hover {
+
+            transform: translateY(-8px);
+
+            border-color: #ffb300;
         }
 
-        .stat-icon {
-            font-size: 35px;
-        }
+        .festival-card .icon {
 
-        .stat-card h3 {
-            font-size: 32px;
-            color: #22c55e;
-            margin-top: 10px;
-        }
+            font-size: 45px;
 
-        .stat-card p {
-            color: #94a3b8;
-        }
-
-        /* ================= PROFILE ================= */
-
-        .profile {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 35px;
-            align-items: center;
-        }
-
-        .profile-box {
-            background: #111c2d;
-            border: 1px solid #1e293b;
-            padding: 35px;
-            border-radius: 12px;
-        }
-
-        .profile-box h3 {
-            font-size: 28px;
-            color: #22c55e;
-            margin-bottom: 15px;
-        }
-
-        .profile-info {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .info {
-            background: #07111f;
-            padding: 15px;
-            border-radius: 8px;
-        }
-
-        .info small {
-            color: #64748b;
-        }
-
-        .info strong {
-            display: block;
-            margin-top: 5px;
-        }
-
-        /* ================= FITNESS ================= */
-
-        .fitness-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .fitness-card {
-            background: #111c2d;
-            padding: 25px;
-            border-radius: 12px;
-        }
-
-        .fitness-card h3 {
-            margin-bottom: 10px;
-        }
-
-        .progress-bg {
-            height: 9px;
-            background: #07111f;
-            border-radius: 20px;
-            overflow: hidden;
-        }
-
-        .progress {
-            height: 100%;
-            background: #22c55e;
-            border-radius: 20px;
-        }
-
-        .fitness-number {
-            color: #22c55e;
-            float: right;
-        }
-
-        /* ================= CALCULATORS ================= */
-
-        .calculator {
-            max-width: 700px;
-            margin: auto;
-
-            background: #111c2d;
-            padding: 35px;
-
-            border-radius: 12px;
-            border: 1px solid #1e293b;
-        }
-
-        .input-group {
-            margin-bottom: 18px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 7px;
-            color: #cbd5e1;
-        }
-
-        input {
-            width: 100%;
-            padding: 13px;
-
-            background: #07111f;
-            color: white;
-
-            border: 1px solid #334155;
-            border-radius: 7px;
-
-            outline: none;
-        }
-
-        input:focus {
-            border-color: #22c55e;
-        }
-
-        .calculate {
-            width: 100%;
-            padding: 14px;
-
-            border: none;
-            border-radius: 7px;
-
-            background: #22c55e;
-            color: #052e16;
-
-            font-weight: bold;
-            cursor: pointer;
-            font-size: 15px;
-        }
-
-        .calculate:hover {
-            background: #16a34a;
-            color: white;
-        }
-
-        .result {
-            margin-top: 20px;
-            padding: 18px;
-
-            background: #07111f;
-            border-radius: 8px;
-
-            text-align: center;
-
-            display: none;
-        }
-
-        .result span {
-            color: #22c55e;
-            font-size: 25px;
-            font-weight: bold;
-        }
-
-        /* ================= WORKOUT ================= */
-
-        .workout-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .day {
-            background: #111c2d;
-            padding: 25px;
-            border-radius: 12px;
-            border: 1px solid #1e293b;
-        }
-
-        .day h3 {
-            color: #22c55e;
             margin-bottom: 12px;
         }
 
-        .day ul {
-            padding-left: 20px;
-            color: #cbd5e1;
+        .festival-card h3 {
+
+            color: #ffca58;
+
+            margin-bottom: 8px;
         }
 
-        .day li {
-            margin: 5px 0;
+        .festival-card p {
+            color: #d6bfa5;
         }
 
-        /* ================= FAVORITE PLAYERS ================= */
+        /* ================= MAIN PHOTO ================= */
 
-        .players {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
+        .main-photo {
 
-        .player {
-            background: #111c2d;
-            padding: 30px;
-            border-radius: 12px;
-            text-align: center;
-
-            border: 1px solid #1e293b;
-
-            transition: 0.3s;
-        }
-
-        .player:hover {
-            transform: translateY(-5px);
-            border-color: #22c55e;
-        }
-
-        .player-avatar {
-            width: 90px;
-            height: 90px;
+            max-width: 950px;
 
             margin: auto;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 20px 60px rgba(0,0,0,0.6);
+        }
+
+        .main-photo img {
+
+            width: 100%;
+
+            display: block;
+
+            transition: 0.5s;
+        }
+
+        .main-photo:hover img {
+
+            transform: scale(1.03);
+        }
+
+        /* ================= GALLERY ================= */
+
+        .gallery {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+        .gallery-item {
+
+            height: 280px;
+
+            overflow: hidden;
+
+            border-radius: 15px;
+
+            border: 1px solid #44200c;
+        }
+
+        .gallery-item img {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: 0.5s;
+        }
+
+        .gallery-item:hover img {
+
+            transform: scale(1.08);
+        }
+
+        /* ================= AARTI ================= */
+
+        .aarti-section {
+
+            background:
+                radial-gradient(
+                    circle,
+                    #4a1c04,
+                    #160b05
+                );
+        }
+
+        .aarti {
+
+            max-width: 800px;
+
+            margin: auto;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #241004,
+                    #3b1604
+                );
+
+            border: 1px solid
+                rgba(255,179,0,0.35);
+
+            border-radius: 20px;
+
+            padding: 40px;
+
+            text-align: center;
+
+            box-shadow:
+                0 20px 50px
+                rgba(0,0,0,0.4);
+        }
+
+        .aarti-icon {
+
+            font-size: 50px;
+
             margin-bottom: 15px;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            border-radius: 50%;
-
-            background: #14532d;
-
-            font-size: 40px;
         }
 
-        .player h3 {
-            margin-bottom: 5px;
+        .aarti h3 {
+
+            color: #ffb300;
+
+            font-size: 30px;
+
+            margin-bottom: 25px;
         }
 
-        .player p {
-            color: #94a3b8;
+        .aarti-text {
+
+            font-size: 18px;
+
+            color: #ffe5bd;
+
+            line-height: 2.1;
+        }
+
+        .aarti-text strong {
+
+            color: #ffb300;
+        }
+
+        .listen-btn {
+
+            margin-top: 25px;
+
+            padding: 12px 25px;
+
+            border: none;
+
+            border-radius: 25px;
+
+            background: #ffb300;
+
+            color: #3b1700;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            font-size: 15px;
+        }
+
+        .listen-btn:hover {
+            background: #ff8f00;
         }
 
         /* ================= QUOTE ================= */
 
         .quote {
+
             text-align: center;
 
-            padding: 80px 20px;
+            padding: 90px 20px;
 
             background:
                 linear-gradient(
-                    rgba(20, 83, 45, 0.35),
-                    rgba(7, 17, 31, 0.9)
-                );
+                    rgba(100,35,0,0.5),
+                    rgba(20,5,0,0.9)
+                ),
+                url("https://feeds.abplive.com/onecms/images/uploaded-images/2025/08/27/fa34e8a30039f12a426ad63baf1c519fe0fd5.jpg?impolicy=abp_cdn&imwidth=720");
+
+            background-size: cover;
+
+            background-position: center;
         }
 
         .quote h2 {
-            font-size: 38px;
+
+            font-size: 45px;
+
+            color: #ffca58;
         }
 
         .quote p {
-            color: #94a3b8;
+
             margin-top: 15px;
-            font-style: italic;
+
+            color: #fff0d5;
+
+            font-size: 19px;
+        }
+
+        /* ================= VISARJAN ================= */
+
+        .visarjan {
+
+            text-align: center;
+
+            background: #0e0704;
+        }
+
+        .visarjan h2 {
+
+            color: #ffb300;
+
+            font-size: 40px;
+        }
+
+        .visarjan p {
+
+            max-width: 700px;
+
+            margin: 15px auto;
+
+            color: #d6bfa5;
+        }
+
+        .morya {
+
+            margin-top: 25px;
+
+            font-size: 32px;
+
+            color: #ffca58;
+
+            font-weight: bold;
         }
 
         /* ================= FOOTER ================= */
 
         footer {
+
             text-align: center;
+
             padding: 35px;
-            background: #020617;
-            color: #64748b;
+
+            background: #090403;
+
+            color: #927d68;
         }
 
         footer strong {
-            color: #22c55e;
+            color: #ffb300;
         }
 
-        /* ================= RESPONSIVE ================= */
+        /* ================= MOBILE ================= */
 
         @media(max-width: 900px) {
 
-            .stats,
-            .fitness-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .festival-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
             }
 
-            .profile {
-                grid-template-columns: 1fr;
-            }
+            .gallery {
 
-            .workout-grid,
-            .players {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns:
+                    repeat(2, 1fr);
             }
 
             .hero h1 {
+
                 font-size: 48px;
             }
         }
@@ -525,42 +571,54 @@
                 display: none;
             }
 
-            .stats,
-            .fitness-grid,
-            .workout-grid,
-            .players {
-                grid-template-columns: 1fr;
-            }
+            .festival-grid,
+            .gallery {
 
-            .profile-info {
                 grid-template-columns: 1fr;
             }
 
             .hero h1 {
+
                 font-size: 38px;
             }
 
             .hero p {
+
+                font-size: 17px;
+            }
+
+            .aarti {
+
+                padding: 25px 18px;
+            }
+
+            .aarti-text {
+
                 font-size: 16px;
             }
 
             section {
+
                 padding: 60px 5%;
             }
         }
+
     </style>
+
 </head>
 
 
 <body>
 
 
-<!-- ================= NAVIGATION ================= -->
+<!-- ================= NAVBAR ================= -->
 
 <nav>
 
     <div class="logo">
-        🏏 Cric<span>Zone</span>
+
+        🕉️ गणपती <span>बाप्पा</span>
+
     </div>
 
     <ul>
@@ -570,23 +628,19 @@
         </li>
 
         <li>
-            <a href="#stats">Stats</a>
+            <a href="#festival">उत्सव</a>
         </li>
 
         <li>
-            <a href="#profile">Profile</a>
+            <a href="#gallery">Gallery</a>
         </li>
 
         <li>
-            <a href="#fitness">Fitness</a>
+            <a href="#aarti">आरती</a>
         </li>
 
         <li>
-            <a href="#calculator">Calculator</a>
-        </li>
-
-        <li>
-            <a href="#players">Players</a>
+            <a href="#visarjan">विसर्जन</a>
         </li>
 
     </ul>
@@ -596,39 +650,47 @@
 
 <!-- ================= HERO ================= -->
 
-<section class="hero" id="home">
+<section
+    class="hero"
+    id="home"
+>
 
     <div class="hero-content">
 
-        <div class="hero-ball">
-            🏏
+        <div class="ganesh-icon">
+            🙏
         </div>
 
         <h1>
-            LIVE THE GAME.
-            <span>LOVE THE GAME.</span>
+
+            गणपती <span>बाप्पा मोरया!</span>
+
         </h1>
 
         <p>
-            Welcome to my personal cricket world.
-            A place where passion, fitness, statistics
-            and the love for cricket come together.
+
+            मंगलमूर्ती मोरया ❤️
+
+            <br>
+
+            भक्ती • संस्कृती • आनंद • एकता
+
         </p>
 
         <div class="hero-buttons">
 
             <a
-                href="#profile"
+                href="#aarti"
                 class="btn primary"
             >
-                Explore My Cricket
+                🪔 आरती पहा
             </a>
 
             <a
-                href="#calculator"
+                href="#gallery"
                 class="btn secondary"
             >
-                Cricket Calculator
+                📸 Gallery
             </a>
 
         </div>
@@ -638,512 +700,279 @@
 </section>
 
 
-<!-- ================= STATS ================= -->
+<!-- ================= FESTIVAL ================= -->
 
-<section id="stats">
+<section
+    class="festival"
+    id="festival"
+>
 
     <div class="section-title">
 
-        <h2>My Cricket Stats</h2>
+        <h2>🌺 गणेशोत्सव</h2>
 
         <p>
-            A snapshot of my cricket journey.
+            श्रद्धा, भक्ती आणि आनंदाचा उत्सव
         </p>
 
     </div>
 
 
-    <div class="stats">
+    <div class="festival-grid">
 
-        <div class="stat-card">
 
-            <div class="stat-icon">
-                🏏
+        <div class="festival-card">
+
+            <div class="icon">
+                🪔
             </div>
 
-            <h3>1250</h3>
-
-            <p>Total Runs</p>
-
-        </div>
-
-
-        <div class="stat-card">
-
-            <div class="stat-icon">
-                🎯
-            </div>
-
-            <h3>48</h3>
-
-            <p>Wickets</p>
-
-        </div>
-
-
-        <div class="stat-card">
-
-            <div class="stat-icon">
-                ⚡
-            </div>
-
-            <h3>132.5</h3>
-
-            <p>Strike Rate</p>
-
-        </div>
-
-
-        <div class="stat-card">
-
-            <div class="stat-icon">
-                🏆
-            </div>
-
-            <h3>15</h3>
-
-            <p>Matches</p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= PROFILE ================= -->
-
-<section id="profile">
-
-    <div class="section-title">
-
-        <h2>My Cricket Profile</h2>
-
-        <p>
-            Know the player behind the passion.
-        </p>
-
-    </div>
-
-
-    <div class="profile">
-
-        <div class="profile-box">
-
-            <h3>🏏 My Playing Style</h3>
+            <h3>
+                गणपती स्थापना
+            </h3>
 
             <p>
-                Cricket has always been more than just a sport
-                for me. I enjoy batting, bowling and contributing
-                to the team whenever possible.
-            </p>
-
-            <div class="profile-info">
-
-                <div class="info">
-
-                    <small>Role</small>
-
-                    <strong>All-Rounder</strong>
-
-                </div>
-
-
-                <div class="info">
-
-                    <small>Batting</small>
-
-                    <strong>Right Handed</strong>
-
-                </div>
-
-
-                <div class="info">
-
-                    <small>Bowling</small>
-
-                    <strong>Right Arm</strong>
-
-                </div>
-
-
-                <div class="info">
-
-                    <small>Favorite Format</small>
-
-                    <strong>T20</strong>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="profile-box">
-
-            <h3>❤️ Why I Love Cricket</h3>
-
-            <p>
-                Cricket teaches patience, discipline,
-                teamwork and the ability to perform
-                under pressure.
-            </p>
-
-            <br>
-
-            <p>
-                Every ball is a new opportunity.
-                Every match is a new story.
+                भक्तिभावाने बाप्पाचे स्वागत
+                आणि स्थापना.
             </p>
 
         </div>
 
-    </div>
 
-</section>
+        <div class="festival-card">
 
-
-<!-- ================= FITNESS ================= -->
-
-<section id="fitness">
-
-    <div class="section-title">
-
-        <h2>Cricket Fitness</h2>
-
-        <p>
-            A good cricketer needs more than just skills.
-        </p>
-
-    </div>
-
-
-    <div class="fitness-grid">
-
-        <div class="fitness-card">
+            <div class="icon">
+                🌺
+            </div>
 
             <h3>
-                ⚡ Speed
-
-                <span class="fitness-number">
-                    90%
-                </span>
+                आरती
             </h3>
 
-            <div class="progress-bg">
-
-                <div
-                    class="progress"
-                    style="width:90%"
-                ></div>
-
-            </div>
+            <p>
+                सकाळ-संध्याकाळ आरती,
+                मंत्र आणि भक्तिगीते.
+            </p>
 
         </div>
 
 
-        <div class="fitness-card">
+        <div class="festival-card">
+
+            <div class="icon">
+                🌊
+            </div>
 
             <h3>
-                🫁 Stamina
-
-                <span class="fitness-number">
-                    80%
-                </span>
+                विसर्जन
             </h3>
 
-            <div class="progress-bg">
-
-                <div
-                    class="progress"
-                    style="width:80%"
-                ></div>
-
-            </div>
+            <p>
+                आनंद आणि भक्तिभावाने
+                बाप्पाला निरोप.
+            </p>
 
         </div>
 
-
-        <div class="fitness-card">
-
-            <h3>
-                💪 Strength
-
-                <span class="fitness-number">
-                    75%
-                </span>
-            </h3>
-
-            <div class="progress-bg">
-
-                <div
-                    class="progress"
-                    style="width:75%"
-                ></div>
-
-            </div>
-
-        </div>
-
-
-        <div class="fitness-card">
-
-            <h3>
-                🤸 Agility
-
-                <span class="fitness-number">
-                    85%
-                </span>
-            </h3>
-
-            <div class="progress-bg">
-
-                <div
-                    class="progress"
-                    style="width:85%"
-                ></div>
-
-            </div>
-
-        </div>
 
     </div>
 
 </section>
 
 
-<!-- ================= CALCULATOR ================= -->
-
-<section id="calculator">
-
-    <div class="section-title">
-
-        <h2>Cricket Calculator</h2>
-
-        <p>
-            Calculate your batting strike rate.
-        </p>
-
-    </div>
-
-
-    <div class="calculator">
-
-        <div class="input-group">
-
-            <label>
-                Runs Scored
-            </label>
-
-            <input
-                type="number"
-                id="runs"
-                placeholder="Example: 75"
-            >
-
-        </div>
-
-
-        <div class="input-group">
-
-            <label>
-                Balls Faced
-            </label>
-
-            <input
-                type="number"
-                id="balls"
-                placeholder="Example: 50"
-            >
-
-        </div>
-
-
-        <button
-            class="calculate"
-            onclick="calculateStrikeRate()"
-        >
-            Calculate Strike Rate
-        </button>
-
-
-        <div
-            class="result"
-            id="strikeResult"
-        >
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= WORKOUT ================= -->
+<!-- ================= MAIN GANPATI ================= -->
 
 <section>
 
     <div class="section-title">
 
-        <h2>Weekly Cricket Training</h2>
+        <h2>🙏 बाप्पाचे सुंदर दर्शन</h2>
 
         <p>
-            Train like a cricketer.
+            गणपती बाप्पा मोरया!
         </p>
 
     </div>
 
 
-    <div class="workout-grid">
+    <div class="main-photo">
 
-        <div class="day">
-
-            <h3>Monday — Batting</h3>
-
-            <ul>
-                <li>Net Practice</li>
-                <li>Shot Practice</li>
-                <li>Footwork</li>
-                <li>30 min Throwdowns</li>
-            </ul>
-
-        </div>
-
-
-        <div class="day">
-
-            <h3>Tuesday — Fitness</h3>
-
-            <ul>
-                <li>Sprint Training</li>
-                <li>Squats</li>
-                <li>Core Workout</li>
-                <li>Stretching</li>
-            </ul>
-
-        </div>
-
-
-        <div class="day">
-
-            <h3>Wednesday — Bowling</h3>
-
-            <ul>
-                <li>Line & Length</li>
-                <li>Yorker Practice</li>
-                <li>Variation</li>
-                <li>Accuracy Drills</li>
-            </ul>
-
-        </div>
-
-
-        <div class="day">
-
-            <h3>Thursday — Fielding</h3>
-
-            <ul>
-                <li>Catching</li>
-                <li>Ground Fielding</li>
-                <li>Throwing</li>
-                <li>Reaction Drills</li>
-            </ul>
-
-        </div>
-
-
-        <div class="day">
-
-            <h3>Friday — Strength</h3>
-
-            <ul>
-                <li>Upper Body</li>
-                <li>Lower Body</li>
-                <li>Core</li>
-                <li>Mobility</li>
-            </ul>
-
-        </div>
-
-
-        <div class="day">
-
-            <h3>Saturday — Match Day</h3>
-
-            <ul>
-                <li>Warm Up</li>
-                <li>Practice Match</li>
-                <li>Performance Review</li>
-                <li>Recovery</li>
-            </ul>
-
-        </div>
+        <img
+            src="https://bloomsonly.in/cdn/shop/files/WhatsApp_Image_2025-07-11_at_11.53.25.jpg?v=1752995781"
+            alt="Ganpati Decoration"
+        >
 
     </div>
 
 </section>
 
 
-<!-- ================= FAVORITE PLAYERS ================= -->
+<!-- ================= GALLERY ================= -->
 
-<section id="players">
+<section id="gallery">
 
     <div class="section-title">
 
-        <h2>My Cricket Heroes</h2>
+        <h2>📸 Ganpati Gallery</h2>
 
         <p>
-            Players who inspire my cricket journey.
+            बाप्पाच्या सुंदर सजावटीचे क्षण
         </p>
 
     </div>
 
 
-    <div class="players">
+    <div class="gallery">
 
-        <div class="player">
 
-            <div class="player-avatar">
-                🏏
-            </div>
+        <div class="gallery-item">
 
-            <h3>Virat Kohli</h3>
-
-            <p>
-                Batting • Aggression • Fitness
-            </p>
+            <img
+                src="https://bloomsonly.in/cdn/shop/files/WhatsApp_Image_2025-07-11_at_11.53.25.jpg?v=1752995781"
+                alt="Ganpati Floral Decoration"
+            >
 
         </div>
 
 
-        <div class="player">
+        <div class="gallery-item">
 
-            <div class="player-avatar">
-                🏏
-            </div>
-
-            <h3>MS Dhoni</h3>
-
-            <p>
-                Leadership • Finishing • Calmness
-            </p>
+            <img
+                src="https://feeds.abplive.com/onecms/images/uploaded-images/2025/08/27/fa34e8a30039f12a426ad63baf1c519fe0fd5.jpg?impolicy=abp_cdn&imwidth=720"
+                alt="Ganpati Home Decoration"
+            >
 
         </div>
 
 
-        <div class="player">
+        <div class="gallery-item">
 
-            <div class="player-avatar">
-                🏏
-            </div>
-
-            <h3>Jasprit Bumrah</h3>
-
-            <p>
-                Bowling • Accuracy • Variations
-            </p>
+            <img
+                src="https://i.pinimg.com/736x/f5/f7/91/f5f791084fa1a7d101fdb39054af4a57.jpg"
+                alt="Ganpati Festival Decoration"
+            >
 
         </div>
+
+
+        <div class="gallery-item">
+
+            <img
+                src="https://i.pinimg.com/originals/9c/48/84/9c4884c8e7a1e38f2d34f344e12484cd.jpg"
+                alt="Ganpati Decoration"
+            >
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img
+                src="https://cdn.shopify.com/s/files/1/0549/6910/6583/files/AD_4nXdSr8YM6c8UcWGLt0T5AGorRiBnn0LzOBnQ3aOFyMo_khBCYZevBERoF8H8ohO8qMypdpzosDZ1T1mhj1eBV_iMtCNkdFRrEJzK8Hl8dWCHETKTL1iSsXEQ2s-R0fgLCiUTWYUoxQ.jpg?v=1738260209"
+                alt="Ganpati Altar"
+            >
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img
+                src="https://feeds.abplive.com/onecms/images/uploaded-images/2025/08/27/fa34e8a30039f12a426ad63baf1c519fe0fd5.jpg?impolicy=abp_cdn&imwidth=720"
+                alt="Ganpati Bappa"
+            >
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= AARTI ================= -->
+
+<section
+    class="aarti-section"
+    id="aarti"
+>
+
+    <div class="section-title">
+
+        <h2>🪔 गणपतीची आरती</h2>
+
+        <p>
+            श्री गणपती बाप्पाच्या चरणी भक्तिभावाने
+        </p>
+
+    </div>
+
+
+    <div class="aarti">
+
+        <div class="aarti-icon">
+            🪔
+        </div>
+
+        <h3>
+            सुखकर्ता दुःखहर्ता
+        </h3>
+
+
+        <div class="aarti-text">
+
+            <strong>
+                सुखकर्ता दुःखहर्ता वार्ता विघ्नाची
+            </strong>
+            <br>
+
+            नुरवी पुरवी प्रेम कृपा जयाची
+            <br>
+
+            सर्वांगी सुंदर उटी शेंदुराची
+            <br>
+
+            कंठी झळके माळ मुक्ताफळांची
+            <br><br>
+
+
+            <strong>
+                जय देव जय देव जय मंगलमूर्ती
+            </strong>
+            <br>
+
+            दर्शनमात्रे मनःकामना पुरती
+            <br><br>
+
+
+            रत्नखचित फरा तुज गौरीकुमरा
+            <br>
+
+            चंदनाची उटी कुंकुमकेशरा
+            <br>
+
+            हिरे जडित मुकुट शोभतो बरा
+            <br>
+
+            रुणझुणती नूपुरे चरणी घागरिया
+            <br><br>
+
+
+            <strong>
+                जय देव जय देव जय मंगलमूर्ती
+            </strong>
+
+        </div>
+
+
+        <button
+            class="listen-btn"
+            onclick="readAarti()"
+        >
+
+            🔊 आरती ऐका
+
+        </button>
 
     </div>
 
@@ -1155,12 +984,45 @@
 <section class="quote">
 
     <h2>
-        "Every ball tells a story."
+        "गणपती बाप्पा मोरया!"
     </h2>
 
     <p>
-        Keep playing. Keep improving. Keep believing.
+        सुखकर्ता • दुःखहर्ता • मंगलमूर्ती
     </p>
+
+</section>
+
+
+<!-- ================= VISARJAN ================= -->
+
+<section
+    class="visarjan"
+    id="visarjan"
+>
+
+    <h2>
+        🌊 बाप्पाचे विसर्जन
+    </h2>
+
+    <p>
+
+        बाप्पाला भक्तिभावाने निरोप देताना
+        एकच प्रार्थना —
+
+        पुढच्या वर्षी लवकर या,
+        सुख-समृद्धी आणि आनंद घेऊन या.
+
+    </p>
+
+    <div class="morya">
+
+        गणपती बाप्पा मोरया! 🙏
+        <br>
+
+        पुढच्या वर्षी लवकर या! ❤️
+
+    </div>
 
 </section>
 
@@ -1170,70 +1032,58 @@
 <footer>
 
     <p>
-        © 2026 <strong>CricZone</strong>
+        © 2026
+        <strong>Ganpati Bappa Morya</strong>
     </p>
 
     <p>
-        Made with ❤️ by a Cricket Lover
+        Made with ❤️ for Bappa
     </p>
 
 </footer>
 
 
-<!-- ================= JAVASCRIPT ================= -->
-
 <script>
 
-    function calculateStrikeRate() {
+    function readAarti() {
 
-        const runs =
-            parseFloat(
-                document.getElementById("runs").value
-            );
+        const text = `
 
-        const balls =
-            parseFloat(
-                document.getElementById("balls").value
-            );
+        सुखकर्ता दुःखहर्ता वार्ता विघ्नाची.
+        नुरवी पुरवी प्रेम कृपा जयाची.
 
-        const result =
-            document.getElementById("strikeResult");
+        सर्वांगी सुंदर उटी शेंदुराची.
+        कंठी झळके माळ मुक्ताफळांची.
 
+        जय देव जय देव जय मंगलमूर्ती.
+        दर्शनमात्रे मनःकामना पुरती.
 
-        if (
-            isNaN(runs) ||
-            isNaN(balls) ||
-            balls <= 0
-        ) {
-
-            result.style.display = "block";
-
-            result.innerHTML =
-                "Please enter valid runs and balls.";
-
-            return;
-
-        }
-
-
-        const strikeRate =
-            (runs / balls) * 100;
-
-
-        result.style.display = "block";
-
-
-        result.innerHTML = `
-
-            Your Strike Rate is
-
-            <br>
-
-            <span>
-                ${strikeRate.toFixed(2)}
-            </span>
+        गणपती बाप्पा मोरया.
 
         `;
+
+        if ("speechSynthesis" in window) {
+
+            window.speechSynthesis.cancel();
+
+            const speech =
+                new SpeechSynthesisUtterance(text);
+
+            speech.lang = "mr-IN";
+
+            speech.rate = 0.8;
+
+            speech.pitch = 1;
+
+            window.speechSynthesis.speak(speech);
+
+        } else {
+
+            alert(
+                "तुमच्या browser मध्ये voice feature उपलब्ध नाही."
+            );
+
+        }
 
     }
 
@@ -1241,4 +1091,5 @@
 
 
 </body>
+
 </html>
