@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>FitTrack | Personal Fitness Dashboard</title>
+    <title>CricZone | Cricket Lover</title>
 
     <style>
         * {
@@ -18,21 +18,26 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background: #0f172a;
-            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #07111f;
+            color: #ffffff;
             line-height: 1.6;
         }
+
+        /* ================= NAVBAR ================= */
 
         nav {
             position: sticky;
             top: 0;
-            background: rgba(15, 23, 42, 0.95);
-            padding: 18px 8%;
+            z-index: 1000;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
-            z-index: 1000;
+
+            padding: 18px 8%;
+
+            background: rgba(7, 17, 31, 0.96);
             border-bottom: 1px solid #1e293b;
         }
 
@@ -42,40 +47,71 @@
             color: #22c55e;
         }
 
+        .logo span {
+            color: white;
+        }
+
         nav ul {
-            list-style: none;
             display: flex;
             gap: 25px;
+            list-style: none;
         }
 
         nav a {
-            color: white;
+            color: #cbd5e1;
             text-decoration: none;
             font-size: 14px;
+            transition: 0.3s;
         }
 
         nav a:hover {
             color: #22c55e;
         }
 
+        /* ================= HERO ================= */
+
         .hero {
-            min-height: 90vh;
+            min-height: 88vh;
+
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+
             text-align: center;
-            padding: 40px 20px;
+            padding: 50px 20px;
+
             background:
-                radial-gradient(circle at top, #163824, transparent 40%),
-                #0f172a;
+                radial-gradient(
+                    circle at center,
+                    #14532d 0%,
+                    #07111f 55%
+                );
         }
 
         .hero-content {
             max-width: 850px;
         }
 
+        .hero-ball {
+            font-size: 70px;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
         .hero h1 {
-            font-size: 60px;
+            font-size: 64px;
+            line-height: 1.1;
             margin-bottom: 20px;
         }
 
@@ -86,25 +122,48 @@
         .hero p {
             color: #94a3b8;
             font-size: 19px;
-            margin-bottom: 35px;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .hero-buttons {
+            margin-top: 30px;
         }
 
         .btn {
             display: inline-block;
-            padding: 14px 30px;
-            background: #22c55e;
-            color: #052e16;
+            padding: 13px 28px;
+            margin: 6px;
+
+            border-radius: 7px;
+
             text-decoration: none;
-            border-radius: 8px;
             font-weight: bold;
-            border: none;
-            cursor: pointer;
+
+            transition: 0.3s;
         }
 
-        .btn:hover {
+        .primary {
+            background: #22c55e;
+            color: #052e16;
+        }
+
+        .primary:hover {
             background: #16a34a;
             color: white;
         }
+
+        .secondary {
+            border: 1px solid #334155;
+            color: white;
+        }
+
+        .secondary:hover {
+            border-color: #22c55e;
+            color: #22c55e;
+        }
+
+        /* ================= GENERAL ================= */
 
         section {
             padding: 80px 8%;
@@ -116,13 +175,15 @@
         }
 
         .section-title h2 {
-            font-size: 35px;
+            font-size: 38px;
         }
 
         .section-title p {
             color: #94a3b8;
             margin-top: 8px;
         }
+
+        /* ================= STATS ================= */
 
         .stats {
             display: grid;
@@ -131,182 +192,298 @@
         }
 
         .stat-card {
-            background: #1e293b;
+            background: #111c2d;
+            border: 1px solid #1e293b;
+
             padding: 30px;
-            border-radius: 12px;
             text-align: center;
+
+            border-radius: 12px;
+
+            transition: 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: #22c55e;
+        }
+
+        .stat-icon {
+            font-size: 35px;
         }
 
         .stat-card h3 {
-            color: #22c55e;
             font-size: 32px;
+            color: #22c55e;
+            margin-top: 10px;
         }
 
         .stat-card p {
             color: #94a3b8;
         }
 
-        .cards {
+        /* ================= PROFILE ================= */
+
+        .profile {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+            align-items: center;
         }
 
-        .card {
-            background: #1e293b;
-            padding: 30px;
-            border-radius: 12px;
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card-icon {
-            font-size: 40px;
-            margin-bottom: 15px;
-        }
-
-        .card h3 {
-            margin-bottom: 10px;
-        }
-
-        .card p {
-            color: #94a3b8;
-            font-size: 14px;
-        }
-
-        .calculator-container {
-            max-width: 650px;
-            margin: auto;
-            background: #1e293b;
+        .profile-box {
+            background: #111c2d;
+            border: 1px solid #1e293b;
             padding: 35px;
             border-radius: 12px;
         }
 
+        .profile-box h3 {
+            font-size: 28px;
+            color: #22c55e;
+            margin-bottom: 15px;
+        }
+
+        .profile-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .info {
+            background: #07111f;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .info small {
+            color: #64748b;
+        }
+
+        .info strong {
+            display: block;
+            margin-top: 5px;
+        }
+
+        /* ================= FITNESS ================= */
+
+        .fitness-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .fitness-card {
+            background: #111c2d;
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+        .fitness-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .progress-bg {
+            height: 9px;
+            background: #07111f;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background: #22c55e;
+            border-radius: 20px;
+        }
+
+        .fitness-number {
+            color: #22c55e;
+            float: right;
+        }
+
+        /* ================= CALCULATORS ================= */
+
+        .calculator {
+            max-width: 700px;
+            margin: auto;
+
+            background: #111c2d;
+            padding: 35px;
+
+            border-radius: 12px;
+            border: 1px solid #1e293b;
+        }
+
+        .input-group {
+            margin-bottom: 18px;
+        }
+
         label {
             display: block;
-            margin-top: 15px;
-            margin-bottom: 5px;
+            margin-bottom: 7px;
             color: #cbd5e1;
         }
 
-        input, select {
+        input {
             width: 100%;
             padding: 13px;
-            background: #0f172a;
-            border: 1px solid #334155;
+
+            background: #07111f;
             color: white;
-            border-radius: 6px;
+
+            border: 1px solid #334155;
+            border-radius: 7px;
+
             outline: none;
         }
 
-        input:focus,
-        select:focus {
+        input:focus {
             border-color: #22c55e;
         }
 
-        .calculate-btn {
+        .calculate {
             width: 100%;
-            margin-top: 20px;
             padding: 14px;
+
             border: none;
             border-radius: 7px;
+
             background: #22c55e;
             color: #052e16;
-            font-size: 16px;
+
             font-weight: bold;
             cursor: pointer;
+            font-size: 15px;
         }
 
-        .calculate-btn:hover {
+        .calculate:hover {
             background: #16a34a;
             color: white;
         }
 
         .result {
             margin-top: 20px;
-            padding: 20px;
-            background: #0f172a;
+            padding: 18px;
+
+            background: #07111f;
             border-radius: 8px;
+
+            text-align: center;
+
             display: none;
         }
 
-        .result h3 {
+        .result span {
             color: #22c55e;
+            font-size: 25px;
+            font-weight: bold;
         }
 
-        .workout {
+        /* ================= WORKOUT ================= */
+
+        .workout-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
         }
 
-        .workout-day {
-            background: #1e293b;
+        .day {
+            background: #111c2d;
             padding: 25px;
-            border-radius: 10px;
+            border-radius: 12px;
+            border: 1px solid #1e293b;
         }
 
-        .workout-day h3 {
+        .day h3 {
             color: #22c55e;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
-        .workout-day ul {
+        .day ul {
             padding-left: 20px;
             color: #cbd5e1;
         }
 
-        .water-box {
-            text-align: center;
-            max-width: 600px;
-            margin: auto;
-            background: #1e293b;
-            padding: 40px;
+        .day li {
+            margin: 5px 0;
+        }
+
+        /* ================= FAVORITE PLAYERS ================= */
+
+        .players {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .player {
+            background: #111c2d;
+            padding: 30px;
             border-radius: 12px;
-        }
+            text-align: center;
 
-        .water-count {
-            font-size: 60px;
-            color: #38bdf8;
-            margin: 20px;
-        }
+            border: 1px solid #1e293b;
 
-        .water-buttons button {
-            padding: 12px 22px;
-            margin: 5px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        .add-water {
-            background: #38bdf8;
-        }
-
-        .reset-water {
-            background: #334155;
-            color: white;
-        }
-
-        .progress-container {
-            width: 100%;
-            height: 12px;
-            background: #0f172a;
-            border-radius: 20px;
-            margin-top: 25px;
-            overflow: hidden;
-        }
-
-        .progress {
-            width: 0%;
-            height: 100%;
-            background: #38bdf8;
             transition: 0.3s;
         }
+
+        .player:hover {
+            transform: translateY(-5px);
+            border-color: #22c55e;
+        }
+
+        .player-avatar {
+            width: 90px;
+            height: 90px;
+
+            margin: auto;
+            margin-bottom: 15px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 50%;
+
+            background: #14532d;
+
+            font-size: 40px;
+        }
+
+        .player h3 {
+            margin-bottom: 5px;
+        }
+
+        .player p {
+            color: #94a3b8;
+        }
+
+        /* ================= QUOTE ================= */
+
+        .quote {
+            text-align: center;
+
+            padding: 80px 20px;
+
+            background:
+                linear-gradient(
+                    rgba(20, 83, 45, 0.35),
+                    rgba(7, 17, 31, 0.9)
+                );
+        }
+
+        .quote h2 {
+            font-size: 38px;
+        }
+
+        .quote p {
+            color: #94a3b8;
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        /* ================= FOOTER ================= */
 
         footer {
             text-align: center;
@@ -315,20 +492,30 @@
             color: #64748b;
         }
 
-        footer span {
+        footer strong {
             color: #22c55e;
         }
+
+        /* ================= RESPONSIVE ================= */
 
         @media(max-width: 900px) {
 
             .stats,
-            .cards,
-            .workout {
+            .fitness-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .profile {
+                grid-template-columns: 1fr;
+            }
+
+            .workout-grid,
+            .players {
                 grid-template-columns: repeat(2, 1fr);
             }
 
             .hero h1 {
-                font-size: 45px;
+                font-size: 48px;
             }
         }
 
@@ -339,13 +526,22 @@
             }
 
             .stats,
-            .cards,
-            .workout {
+            .fitness-grid,
+            .workout-grid,
+            .players {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-info {
                 grid-template-columns: 1fr;
             }
 
             .hero h1 {
                 font-size: 38px;
+            }
+
+            .hero p {
+                font-size: 16px;
             }
 
             section {
@@ -355,172 +551,158 @@
     </style>
 </head>
 
+
 <body>
+
+
+<!-- ================= NAVIGATION ================= -->
 
 <nav>
 
     <div class="logo">
-        FitTrack
+        🏏 Cric<span>Zone</span>
     </div>
 
     <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#bmi">BMI</a></li>
-        <li><a href="#protein">Protein</a></li>
-        <li><a href="#workout">Workout</a></li>
-        <li><a href="#water">Water</a></li>
+
+        <li>
+            <a href="#home">Home</a>
+        </li>
+
+        <li>
+            <a href="#stats">Stats</a>
+        </li>
+
+        <li>
+            <a href="#profile">Profile</a>
+        </li>
+
+        <li>
+            <a href="#fitness">Fitness</a>
+        </li>
+
+        <li>
+            <a href="#calculator">Calculator</a>
+        </li>
+
+        <li>
+            <a href="#players">Players</a>
+        </li>
+
     </ul>
 
 </nav>
 
 
+<!-- ================= HERO ================= -->
+
 <section class="hero" id="home">
 
     <div class="hero-content">
 
+        <div class="hero-ball">
+            🏏
+        </div>
+
         <h1>
-            Build Your <span>Best Body.</span>
+            LIVE THE GAME.
+            <span>LOVE THE GAME.</span>
         </h1>
 
         <p>
-            A simple personal fitness dashboard to calculate BMI,
-            estimate protein requirements, follow workouts and
-            track your daily water intake.
+            Welcome to my personal cricket world.
+            A place where passion, fitness, statistics
+            and the love for cricket come together.
         </p>
 
-        <a href="#bmi" class="btn">
-            Start Your Fitness Journey
-        </a>
+        <div class="hero-buttons">
+
+            <a
+                href="#profile"
+                class="btn primary"
+            >
+                Explore My Cricket
+            </a>
+
+            <a
+                href="#calculator"
+                class="btn secondary"
+            >
+                Cricket Calculator
+            </a>
+
+        </div>
 
     </div>
 
 </section>
 
 
-<section>
+<!-- ================= STATS ================= -->
+
+<section id="stats">
+
+    <div class="section-title">
+
+        <h2>My Cricket Stats</h2>
+
+        <p>
+            A snapshot of my cricket journey.
+        </p>
+
+    </div>
+
 
     <div class="stats">
 
         <div class="stat-card">
-            <h3>4+</h3>
-            <p>Fitness Tools</p>
+
+            <div class="stat-icon">
+                🏏
+            </div>
+
+            <h3>1250</h3>
+
+            <p>Total Runs</p>
+
         </div>
+
 
         <div class="stat-card">
-            <h3>6</h3>
-            <p>Workout Days</p>
+
+            <div class="stat-icon">
+                🎯
+            </div>
+
+            <h3>48</h3>
+
+            <p>Wickets</p>
+
         </div>
+
 
         <div class="stat-card">
-            <h3>8</h3>
-            <p>Glasses Daily</p>
+
+            <div class="stat-icon">
+                ⚡
+            </div>
+
+            <h3>132.5</h3>
+
+            <p>Strike Rate</p>
+
         </div>
+
 
         <div class="stat-card">
-            <h3>100%</h3>
-            <p>Free To Use</p>
-        </div>
 
-    </div>
+            <div class="stat-icon">
+                🏆
+            </div>
 
-</section>
+            <h3>15</h3>
 
-
-<section id="features">
-
-    <div class="section-title">
-
-        <h2>Fitness Tools</h2>
-
-        <p>
-            Everything you need to start tracking your fitness journey.
-        </p>
-
-    </div>
-
-    <div class="cards">
-
-        <div class="card">
-
-            <div class="card-icon">⚖️</div>
-
-            <h3>BMI Calculator</h3>
-
-            <p>
-                Calculate your Body Mass Index using your
-                height and weight.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">🥗</div>
-
-            <h3>Protein Calculator</h3>
-
-            <p>
-                Estimate your daily protein requirement
-                based on body weight and activity.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">💪</div>
-
-            <h3>Workout Plan</h3>
-
-            <p>
-                Follow a simple weekly workout schedule
-                covering major muscle groups.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">💧</div>
-
-            <h3>Water Tracker</h3>
-
-            <p>
-                Track the number of glasses of water
-                you drink during the day.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">🏃</div>
-
-            <h3>Stay Active</h3>
-
-            <p>
-                Build consistency with regular cardio,
-                strength training and recovery.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">😴</div>
-
-            <h3>Recovery</h3>
-
-            <p>
-                Remember that sleep and recovery are
-                important parts of your fitness routine.
-            </p>
+            <p>Matches</p>
 
         </div>
 
@@ -529,227 +711,91 @@
 </section>
 
 
-<section id="bmi">
+<!-- ================= PROFILE ================= -->
+
+<section id="profile">
 
     <div class="section-title">
 
-        <h2>BMI Calculator</h2>
+        <h2>My Cricket Profile</h2>
 
         <p>
-            Enter your height and weight to calculate your BMI.
+            Know the player behind the passion.
         </p>
 
     </div>
 
 
-    <div class="calculator-container">
+    <div class="profile">
 
-        <label>
-            Weight (kg)
-        </label>
+        <div class="profile-box">
 
-        <input
-            type="number"
-            id="weight"
-            placeholder="Example: 70"
-        >
+            <h3>🏏 My Playing Style</h3>
 
+            <p>
+                Cricket has always been more than just a sport
+                for me. I enjoy batting, bowling and contributing
+                to the team whenever possible.
+            </p>
 
-        <label>
-            Height (cm)
-        </label>
+            <div class="profile-info">
 
-        <input
-            type="number"
-            id="height"
-            placeholder="Example: 175"
-        >
+                <div class="info">
 
+                    <small>Role</small>
 
-        <button
-            class="calculate-btn"
-            onclick="calculateBMI()"
-        >
-            Calculate BMI
-        </button>
+                    <strong>All-Rounder</strong>
+
+                </div>
 
 
-        <div
-            class="result"
-            id="bmiResult"
-        >
-        </div>
+                <div class="info">
 
-    </div>
+                    <small>Batting</small>
 
-</section>
+                    <strong>Right Handed</strong>
+
+                </div>
 
 
-<section id="protein">
+                <div class="info">
 
-    <div class="section-title">
+                    <small>Bowling</small>
 
-        <h2>Protein Calculator</h2>
+                    <strong>Right Arm</strong>
 
-        <p>
-            Get a simple protein estimate based on your body weight.
-        </p>
-
-    </div>
+                </div>
 
 
-    <div class="calculator-container">
+                <div class="info">
 
-        <label>
-            Your Weight (kg)
-        </label>
+                    <small>Favorite Format</small>
 
-        <input
-            type="number"
-            id="proteinWeight"
-            placeholder="Example: 70"
-        >
+                    <strong>T20</strong>
 
+                </div>
 
-        <label>
-            Activity Level
-        </label>
-
-        <select id="activity">
-
-            <option value="0.8">
-                Low Activity
-            </option>
-
-            <option value="1.2">
-                Light Exercise
-            </option>
-
-            <option value="1.6">
-                Regular Gym
-            </option>
-
-            <option value="2">
-                Heavy Training
-            </option>
-
-        </select>
-
-
-        <button
-            class="calculate-btn"
-            onclick="calculateProtein()"
-        >
-            Calculate Protein
-        </button>
-
-
-        <div
-            class="result"
-            id="proteinResult"
-        >
-        </div>
-
-    </div>
-
-</section>
-
-
-<section id="workout">
-
-    <div class="section-title">
-
-        <h2>Weekly Workout Plan</h2>
-
-        <p>
-            Example workout split for your fitness dashboard.
-        </p>
-
-    </div>
-
-
-    <div class="workout">
-
-        <div class="workout-day">
-
-            <h3>Monday — Chest</h3>
-
-            <ul>
-                <li>Bench Press</li>
-                <li>Incline Dumbbell Press</li>
-                <li>Chest Fly</li>
-                <li>Push Ups</li>
-            </ul>
+            </div>
 
         </div>
 
 
-        <div class="workout-day">
+        <div class="profile-box">
 
-            <h3>Tuesday — Back</h3>
+            <h3>❤️ Why I Love Cricket</h3>
 
-            <ul>
-                <li>Lat Pulldown</li>
-                <li>Seated Row</li>
-                <li>Dumbbell Row</li>
-                <li>Back Extension</li>
-            </ul>
+            <p>
+                Cricket teaches patience, discipline,
+                teamwork and the ability to perform
+                under pressure.
+            </p>
 
-        </div>
+            <br>
 
-
-        <div class="workout-day">
-
-            <h3>Wednesday — Legs</h3>
-
-            <ul>
-                <li>Squats</li>
-                <li>Leg Press</li>
-                <li>Leg Extension</li>
-                <li>Calf Raises</li>
-            </ul>
-
-        </div>
-
-
-        <div class="workout-day">
-
-            <h3>Thursday — Shoulders</h3>
-
-            <ul>
-                <li>Shoulder Press</li>
-                <li>Lateral Raises</li>
-                <li>Front Raises</li>
-                <li>Reverse Fly</li>
-            </ul>
-
-        </div>
-
-
-        <div class="workout-day">
-
-            <h3>Friday — Arms</h3>
-
-            <ul>
-                <li>Bicep Curl</li>
-                <li>Hammer Curl</li>
-                <li>Tricep Pushdown</li>
-                <li>Overhead Extension</li>
-            </ul>
-
-        </div>
-
-
-        <div class="workout-day">
-
-            <h3>Saturday — Cardio</h3>
-
-            <ul>
-                <li>Running</li>
-                <li>Cycling</li>
-                <li>Jump Rope</li>
-                <li>Core Workout</li>
-            </ul>
+            <p>
+                Every ball is a new opportunity.
+                Every match is a new story.
+            </p>
 
         </div>
 
@@ -758,62 +804,106 @@
 </section>
 
 
-<section id="water">
+<!-- ================= FITNESS ================= -->
+
+<section id="fitness">
 
     <div class="section-title">
 
-        <h2>Daily Water Tracker</h2>
+        <h2>Cricket Fitness</h2>
 
         <p>
-            Keep track of your daily water intake.
+            A good cricketer needs more than just skills.
         </p>
 
     </div>
 
 
-    <div class="water-box">
+    <div class="fitness-grid">
 
-        <h3>
-            Today's Water
-        </h3>
+        <div class="fitness-card">
 
-        <div
-            class="water-count"
-            id="waterCount"
-        >
-            0 / 8
-        </div>
+            <h3>
+                ⚡ Speed
 
-        <p>
-            Glasses of water
-        </p>
+                <span class="fitness-number">
+                    90%
+                </span>
+            </h3>
 
+            <div class="progress-bg">
 
-        <div class="water-buttons">
+                <div
+                    class="progress"
+                    style="width:90%"
+                ></div>
 
-            <button
-                class="add-water"
-                onclick="addWater()"
-            >
-                + Add Glass
-            </button>
-
-            <button
-                class="reset-water"
-                onclick="resetWater()"
-            >
-                Reset
-            </button>
+            </div>
 
         </div>
 
 
-        <div class="progress-container">
+        <div class="fitness-card">
 
-            <div
-                class="progress"
-                id="waterProgress"
-            >
+            <h3>
+                🫁 Stamina
+
+                <span class="fitness-number">
+                    80%
+                </span>
+            </h3>
+
+            <div class="progress-bg">
+
+                <div
+                    class="progress"
+                    style="width:80%"
+                ></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="fitness-card">
+
+            <h3>
+                💪 Strength
+
+                <span class="fitness-number">
+                    75%
+                </span>
+            </h3>
+
+            <div class="progress-bg">
+
+                <div
+                    class="progress"
+                    style="width:75%"
+                ></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="fitness-card">
+
+            <h3>
+                🤸 Agility
+
+                <span class="fitness-number">
+                    85%
+                </span>
+            </h3>
+
+            <div class="progress-bg">
+
+                <div
+                    class="progress"
+                    style="width:85%"
+                ></div>
+
             </div>
 
         </div>
@@ -823,84 +913,311 @@
 </section>
 
 
+<!-- ================= CALCULATOR ================= -->
+
+<section id="calculator">
+
+    <div class="section-title">
+
+        <h2>Cricket Calculator</h2>
+
+        <p>
+            Calculate your batting strike rate.
+        </p>
+
+    </div>
+
+
+    <div class="calculator">
+
+        <div class="input-group">
+
+            <label>
+                Runs Scored
+            </label>
+
+            <input
+                type="number"
+                id="runs"
+                placeholder="Example: 75"
+            >
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label>
+                Balls Faced
+            </label>
+
+            <input
+                type="number"
+                id="balls"
+                placeholder="Example: 50"
+            >
+
+        </div>
+
+
+        <button
+            class="calculate"
+            onclick="calculateStrikeRate()"
+        >
+            Calculate Strike Rate
+        </button>
+
+
+        <div
+            class="result"
+            id="strikeResult"
+        >
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= WORKOUT ================= -->
+
+<section>
+
+    <div class="section-title">
+
+        <h2>Weekly Cricket Training</h2>
+
+        <p>
+            Train like a cricketer.
+        </p>
+
+    </div>
+
+
+    <div class="workout-grid">
+
+        <div class="day">
+
+            <h3>Monday — Batting</h3>
+
+            <ul>
+                <li>Net Practice</li>
+                <li>Shot Practice</li>
+                <li>Footwork</li>
+                <li>30 min Throwdowns</li>
+            </ul>
+
+        </div>
+
+
+        <div class="day">
+
+            <h3>Tuesday — Fitness</h3>
+
+            <ul>
+                <li>Sprint Training</li>
+                <li>Squats</li>
+                <li>Core Workout</li>
+                <li>Stretching</li>
+            </ul>
+
+        </div>
+
+
+        <div class="day">
+
+            <h3>Wednesday — Bowling</h3>
+
+            <ul>
+                <li>Line & Length</li>
+                <li>Yorker Practice</li>
+                <li>Variation</li>
+                <li>Accuracy Drills</li>
+            </ul>
+
+        </div>
+
+
+        <div class="day">
+
+            <h3>Thursday — Fielding</h3>
+
+            <ul>
+                <li>Catching</li>
+                <li>Ground Fielding</li>
+                <li>Throwing</li>
+                <li>Reaction Drills</li>
+            </ul>
+
+        </div>
+
+
+        <div class="day">
+
+            <h3>Friday — Strength</h3>
+
+            <ul>
+                <li>Upper Body</li>
+                <li>Lower Body</li>
+                <li>Core</li>
+                <li>Mobility</li>
+            </ul>
+
+        </div>
+
+
+        <div class="day">
+
+            <h3>Saturday — Match Day</h3>
+
+            <ul>
+                <li>Warm Up</li>
+                <li>Practice Match</li>
+                <li>Performance Review</li>
+                <li>Recovery</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FAVORITE PLAYERS ================= -->
+
+<section id="players">
+
+    <div class="section-title">
+
+        <h2>My Cricket Heroes</h2>
+
+        <p>
+            Players who inspire my cricket journey.
+        </p>
+
+    </div>
+
+
+    <div class="players">
+
+        <div class="player">
+
+            <div class="player-avatar">
+                🏏
+            </div>
+
+            <h3>Virat Kohli</h3>
+
+            <p>
+                Batting • Aggression • Fitness
+            </p>
+
+        </div>
+
+
+        <div class="player">
+
+            <div class="player-avatar">
+                🏏
+            </div>
+
+            <h3>MS Dhoni</h3>
+
+            <p>
+                Leadership • Finishing • Calmness
+            </p>
+
+        </div>
+
+
+        <div class="player">
+
+            <div class="player-avatar">
+                🏏
+            </div>
+
+            <h3>Jasprit Bumrah</h3>
+
+            <p>
+                Bowling • Accuracy • Variations
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= QUOTE ================= -->
+
+<section class="quote">
+
+    <h2>
+        "Every ball tells a story."
+    </h2>
+
+    <p>
+        Keep playing. Keep improving. Keep believing.
+    </p>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
 <footer>
 
     <p>
-        © 2026 <span>FitTrack</span> |
-        Personal Fitness Dashboard
+        © 2026 <strong>CricZone</strong>
     </p>
 
     <p>
-        Built using HTML, CSS & JavaScript
+        Made with ❤️ by a Cricket Lover
     </p>
 
 </footer>
 
 
+<!-- ================= JAVASCRIPT ================= -->
+
 <script>
 
-    function calculateBMI() {
+    function calculateStrikeRate() {
 
-        const weight =
+        const runs =
             parseFloat(
-                document.getElementById("weight").value
+                document.getElementById("runs").value
             );
 
-        const height =
+        const balls =
             parseFloat(
-                document.getElementById("height").value
+                document.getElementById("balls").value
             );
-
 
         const result =
-            document.getElementById("bmiResult");
+            document.getElementById("strikeResult");
 
 
-        if (!weight || !height) {
+        if (
+            isNaN(runs) ||
+            isNaN(balls) ||
+            balls <= 0
+        ) {
 
             result.style.display = "block";
 
             result.innerHTML =
-                "<p>Please enter valid height and weight.</p>";
+                "Please enter valid runs and balls.";
 
             return;
-        }
-
-
-        const heightMeter =
-            height / 100;
-
-
-        const bmi =
-            weight / (heightMeter * heightMeter);
-
-
-        let category = "";
-
-
-        if (bmi < 18.5) {
-
-            category = "Underweight";
 
         }
 
-        else if (bmi < 25) {
 
-            category = "Normal Weight";
-
-        }
-
-        else if (bmi < 30) {
-
-            category = "Overweight";
-
-        }
-
-        else {
-
-            category = "Obesity Range";
-
-        }
+        const strikeRate =
+            (runs / balls) * 100;
 
 
         result.style.display = "block";
@@ -908,136 +1225,20 @@
 
         result.innerHTML = `
 
-            <h3>Your BMI: ${bmi.toFixed(1)}</h3>
+            Your Strike Rate is
 
-            <p>
-                Category: ${category}
-            </p>
+            <br>
 
-        `;
-
-    }
-
-
-
-    function calculateProtein() {
-
-        const weight =
-            parseFloat(
-                document.getElementById("proteinWeight").value
-            );
-
-
-        const activity =
-            parseFloat(
-                document.getElementById("activity").value
-            );
-
-
-        const result =
-            document.getElementById("proteinResult");
-
-
-        if (!weight) {
-
-            result.style.display = "block";
-
-            result.innerHTML =
-                "<p>Please enter a valid weight.</p>";
-
-            return;
-        }
-
-
-        const protein =
-            weight * activity;
-
-
-        result.style.display = "block";
-
-
-        result.innerHTML = `
-
-            <h3>
-                ${protein.toFixed(0)} g/day
-            </h3>
-
-            <p>
-                Estimated daily protein intake based
-                on the selected activity level.
-            </p>
+            <span>
+                ${strikeRate.toFixed(2)}
+            </span>
 
         `;
 
     }
-
-
-
-    let water =
-        Number(localStorage.getItem("water")) || 0;
-
-
-    function updateWater() {
-
-        const count =
-            document.getElementById("waterCount");
-
-
-        const progress =
-            document.getElementById("waterProgress");
-
-
-        count.innerText =
-            water + " / 8";
-
-
-        let percentage =
-            (water / 8) * 100;
-
-
-        if (percentage > 100) {
-
-            percentage = 100;
-
-        }
-
-
-        progress.style.width =
-            percentage + "%";
-
-
-        localStorage.setItem(
-            "water",
-            water
-        );
-
-    }
-
-
-
-    function addWater() {
-
-        water++;
-
-        updateWater();
-
-    }
-
-
-
-    function resetWater() {
-
-        water = 0;
-
-        updateWater();
-
-    }
-
-
-
-    updateWater();
 
 </script>
+
 
 </body>
 </html>
